@@ -7,9 +7,9 @@
 [submodule ".xmonad/xmobar-git"]
   path = .xmonad/xmobar-git
   url = https://github.com/jaor/xmobar
-[submodule "/home/cyber/.config/nvim"]
-	path = /home/cyber/.config/nvim
+[submodule ".config/nvim"]
+	path = .config/nvim
 	url = https://github.com/CyberGsus/neovim-setup
-[submodule "/home/cyber/.tmux/plugins/tpm"]
-	path = /home/cyber/.tmux/plugins/tpm
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
