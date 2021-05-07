@@ -1,13 +1,13 @@
-[submodule "/home/cyber/.xmonad/xmonad-git"]
-  path = /home/cyber/.xmonad/xmonad-git
+[submodule ".xmonad/xmonad-git"]
+  path = .xmonad/xmonad-git
   url = https://github.com/xmonad/xmonad
-[submodule "/home/cyber/.xmonad/xmonad-contrib"]
-  path = /home/cyber/.xmonad/xmonad-contrib
+[submodule ".xmonad/xmonad-contrib"]
+  path = .xmonad/xmonad-contrib
   url = https://github.com/xmonad/xmonad-contrib
-[submodule "/home/cyber/.xmonad/xmobar-git"]
-  path = /home/cyber/.xmonad/xmobar-git
+[submodule ".xmonad/xmobar-git"]
+  path = .xmonad/xmobar-git
   url = https://github.com/jaor/xmobar
 
-[submodule "/home/cyber/.config/nvim"]
-  path = /home/cyber/.config/nvim
+[submodule ".config/nvim"]
+  path = .config/nvim
   url = https://github.com/CyberGsus/neovim-setup
