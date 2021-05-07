@@ -10,3 +10,6 @@
 [submodule "/home/cyber/.config/nvim"]
 	path = /home/cyber/.config/nvim
 	url = https://github.com/CyberGsus/neovim-setup
+[submodule "/home/cyber/.tmux/plugins/tpm"]
+	path = /home/cyber/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
