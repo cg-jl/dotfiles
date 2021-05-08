@@ -2,6 +2,6 @@
 *.hs
 *.o
 *.errors
-xmonad-x86-64-linux
+xmonad-x86_64-linux
 stack.yaml.lock
 .stack-work
