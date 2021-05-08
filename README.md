@@ -7,7 +7,7 @@ computer, only `/usr/lib` and `/usr/bin` cause more havoc. But it is indeed the 
 
 ![screenshot](./screenshots/nord.png)
 
-The theme is [nord-based](https://www.nordtheme.com/), check them out, the nord team is doing a great job!
+The theme is [nord based](https://www.nordtheme.com/), check them out, the nord team is doing a great job!
 Also, as a sidenote, disable your dark reader on the website, it'll mess up the colors. Use the night theme moon on the right corner of the page.
 
 I'm not sure if the license of my background file allows me to distribute it, so
@@ -33,7 +33,7 @@ tmux -f cybergsus-dotfiles/.tmux.conf
 to run it inside a separate terminal session (with alacritty, you would do `alacritty -e` plus the thing above) and **not messing yours up**.
 
 The xmonad config requires `stack` and you need to run `./build` the first time,and make sure you use the binary resulting in
-the same directory (in my case it was `xmonad-x86-64-linux`) when instatiating it. When testing the xmonad config,
+the same directory (in my case it was `xmonad-x86_64-linux`) when instatiating it. When testing the xmonad config,
 **please** use [Xephyr](https://wiki.archlinux.org/title/Xephyr) so you don't mess up your current desktop config:
 
 ```sh
