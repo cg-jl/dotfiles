@@ -1,7 +1,0 @@
-*.hi
-*.hs
-*.o
-*.errors
-xmonad-x86_64-linux
-stack.yaml.lock
-.stack-work
