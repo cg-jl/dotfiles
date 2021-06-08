@@ -13,3 +13,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".xmonad/xmonad-themes"]
+  path = .xmoand/xmoand-themes
+  url = https://github.com/CyberGsus/xmonad-themes
