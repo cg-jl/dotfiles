@@ -5,6 +5,7 @@ import Data.Monoid
 import System.Exit (exitSuccess)
 import Data.List (mapAccumL)
 import System.IO (Handle, IOMode (ReadWriteMode, WriteMode), hGetContents, hGetLine, hPutStr, hPutStrLn, stderr, withFile)
+import Common
 import Themes
 import XMonad
 import XMonad.Actions.CopyWindow (kill1)
@@ -204,25 +205,9 @@ myKeys =
     ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
   ]
 
-putsErr :: String -> IO ()
-putsErr = hPutStrLn stderr
-
-themeName :: String
-themeName = "nord"
-
-getTheme :: IO Theme
-getTheme = do
-  let logAndDefault err = do
-        putsErr $ "XMonad (theme) : Couldn't load theme " ++ show themeName ++ ": " ++ err
-        putsErr "XMonad (theme) : Resorting to default theme (ugly, duh)."
-        return defaultTheme
-
-  theme_res <- fetchTheme themeName
-  either logAndDefault return theme_res
-
 main :: IO ()
 main = do
-  theme <- getTheme
+  theme <- getTheme "XMonad"
   let themeColor = (`colorString` theme)
   xmobarPipe <- spawnPipe "~/.local/bin/xmobar"
   -- Xmonad
