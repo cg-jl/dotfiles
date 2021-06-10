@@ -1,14 +1,9 @@
-import Control.Monad
-import Control.Monad.Reader
-import Control.Monad.Trans
-import Control.Monad.Trans.Maybe
-import Data.List
-import Data.Maybe
+module Main (main) where
+
 import Data.Monoid
-import Data.Time.Clock (UTCTime)
-import Data.Tree
-import System.Directory (doesFileExist, getModificationTime)
+-- import Data.Tree
 import System.Exit (exitSuccess)
+import Data.List (mapAccumL)
 import System.IO (Handle, IOMode (ReadWriteMode, WriteMode), hGetContents, hGetLine, hPutStr, hPutStrLn, stderr, withFile)
 import Themes
 import XMonad
@@ -229,8 +224,7 @@ main :: IO ()
 main = do
   theme <- getTheme
   let themeColor = (`colorString` theme)
-  -- Xmobar
-  xmobarPipe <- spawnPipe "~/.local/bin/xmobar -x 0 ~/.config/xmobar/primary.hs"
+  xmobarPipe <- spawnPipe "~/.local/bin/xmobar"
   -- Xmonad
   xmonad $
     ewmh
