@@ -6,7 +6,10 @@ set VIRTUAL_ENV_DISABLE_PROMPT "1"
 export MANPAGER="nvim -c 'set ft=man' -"
 xset r rate 300 50 # faster scrolling with keys
 
-function add-to-path --argument dir
+-- so that github cli doesn't launch nano again, duh
+set -g GIT_EDITOR $EDITOR
+
+function add-to-path --argument dir --description "adds argument to path if it doesn't exist in path yet."
   if test -d $dir
     if not contains -- $dir $PATH
       set -p PATH $dir
@@ -18,6 +21,7 @@ add-to-path /opt/bin
 add-to-path ~/.local/bin
 add-to-path ~/.ghcup/bin
 add-to-path ~/.tmux/bin
+add-to-path ~/go/bin
 add-to-path ~/.cargo/bin
 
 
@@ -49,10 +53,10 @@ else
   bind '$' __history_previous_command_arguments
 end
 
-## Fish command history
-function history
-    builtin history --show-time='%F %T '
-end
+# ## Fish command history
+# function history
+#     builtin history --show-time='%F %T '
+# end
 
 function backup --argument filename
     cp $filename $filename.bak
@@ -74,8 +78,8 @@ alias la='lsd -a --color=auto'
 alias ll='lsd -al --color=auto'
 alias lt='lsd -aT --color=always'
 
-alias please='sudo'
-alias tb='nc termbin.com 9999'
+# alias please='sudo'
+# alias tb='nc termbin.com 9999'
 alias git-dots="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 
@@ -88,10 +92,6 @@ source "$HOME/.config/fish/git_aliases.fish"
 # complete -f -c dotnet -a "(dotnet complete)"
 
 source ("/usr/bin/starship" init fish --print-full-init | psub)
-
-function paru-Sow 
-  paru -S $argv --overwrite '*'
-end
 
 # tmux + fzf = <3
 export FZF_TMUX_OPTS="-p"
