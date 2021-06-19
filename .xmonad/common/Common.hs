@@ -12,7 +12,7 @@ putsErr = hPutStrLn stderr
 getTheme :: String -> IO Theme
 getTheme from = do
   let logAndDefault err = do
-        putsErr $ from ++ "(themes): Could not load theme " ++ show themeName ++ ": " ++ show err
+        putsErr $ from ++ "(themes): Could not load theme " ++ show themeName ++ ": " ++ err
         putsErr $ from ++ "(themes): Using default (ugly) theme."
         return defaultTheme
   theme_res <- fetchTheme themeName

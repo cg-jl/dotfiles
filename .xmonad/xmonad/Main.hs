@@ -40,6 +40,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.SpawnOnce
+import XMonad.Operations (restart)
 
 myModMask = mod4Mask :: KeyMask
 
@@ -142,7 +143,7 @@ myKeys =
     -- Kill window
     ("M-w", kill1),
     -- Restart xmonad
-    ("M-C-r", spawn "xmonad --restart"),
+    ("M-C-r", restart "xmonad" True), -- for more info look at: xmonad-git/XMonad/Main.hs#L159
     -- Quit xmonad
     ("M-C-q", io exitSuccess),
     ----------------- Floating windows -----------------
@@ -211,7 +212,7 @@ main = do
   let themeColor = (`colorString` theme)
   xmobarPipe <- spawnPipe "~/.local/bin/xmobar"
   -- Xmonad
-  xmonad $
+  launch $
     ewmh
       def
         { manageHook = insertPosition Master Newer <+> manageDocks <+> (isFullscreen --> doFullFloat),
