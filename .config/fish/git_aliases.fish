@@ -1,0 +1,5 @@
+alias gcm='git commit -m'
+alias gc='git commit'
+alias gcl='git clone'
+alias gclm='git clone --recurse-submodules'
+alias gs='git status'
