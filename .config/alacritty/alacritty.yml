@@ -1,6 +1,4 @@
 background_opacity: 0.93
-env:
-  TERM: xterm-256color
 colors:
   bright:
     black: '#4c566a'
@@ -49,6 +47,8 @@ colors:
   vi_mode_cursor:
     cursor: '#d8dee9'
     text: '#2e3440'
+env:
+  TERM: xterm-256color
 font:
   bold:
     family: FantasqueSansMono Nerd Font
@@ -60,7 +60,7 @@ font:
     family: FantasqueSansMono  Nerd Font
     style: Regular
   size: 10.9
-shell: 
-  program: /usr/bin/tmux
+shell:
   args:
-      - "-2"
+  - '-2'
+  program: /usr/bin/tmux
