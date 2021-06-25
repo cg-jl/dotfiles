@@ -10,8 +10,9 @@ computer, only `/usr/lib` and `/usr/bin` cause more havoc. But it is indeed the 
 The theme is [nord based](https://www.nordtheme.com/), check them out, the nord team is doing a great job!
 Also, as a sidenote, disable your dark reader on the website, it'll mess up the colors. Use the night theme moon on the right corner of the page.
 
-I'm not sure if the license of my background file allows me to distribute it, so
-I won't. Just search for 'nordic' wallpapers and you might see it.
+The wallpaper is from [this awesome person](https://raw.githubusercontent.com/Blu3Jive001/Wallpapers/master/Nordic/Simplistic/Minimal-Nord.png), 
+under `Nordic/Simplistic/Minimal-Nord.png`.
+
 
 ## How to clone it
 
