@@ -33,8 +33,9 @@ tmux -f cybergsus-dotfiles/.tmux.conf
 ```
 to run it inside a separate terminal session (with alacritty, you would do `alacritty -e` plus the thing above) and **not messing yours up**.
 
-The xmonad config requires `stack` and you need to run `./build` the first time,and make sure you use the binary resulting in
-the same directory (in my case it was `xmonad-x86_64-linux`) when instatiating it. When testing the xmonad config,
+The xmonad config requires `stack` and you need to run `stack build` inside the `.xmonad` directory the first time. Make sure
+
+When testing the xmonad config,
 **please** use [Xephyr](https://wiki.archlinux.org/title/Xephyr) so you don't mess up your current desktop config:
 
 ```sh
@@ -44,10 +45,11 @@ Xephyr -br -ac -noreset -screen 1280x720 :1
 and then running xmonad like this:
 
 ```sh
-DISPLAY=:1 </path/to/xmonad>
+DISPLAY=:1 stack exec xmonad
 ```
 
-That way you won't have to install it completely. I completely discourage from installing.
+That way you won't have to install it completely. I completely discourage from installing, unless
+you know exactly what you're doing.
 
 ## Tips 
 
