@@ -1,25 +1,27 @@
-module Main (main) where
+module XmobarConfig.Main (main) where
+
+-- import Xmobar.Plugins.HandleReader
 
 import Common
-import System.IO (hPutStrLn, stderr)
+import System.IO (Handle, hFlush, hPutStrLn, stderr, stdout)
 import Themes
 import Xmobar
 
 xmobarColor :: String -> String -> String
 xmobarColor col msg = "<fc=" ++ col ++ ">" ++ msg ++ "</fc>"
 
-mkConfig :: Theme -> Config
-mkConfig theme =
+mkConfig :: Handle -> Theme -> Config
+mkConfig handle theme =
   let themeColor = (`colorString` theme)
       sep = xmobarColor (themeColor separators) " :: "
    in defaultConfig
-        { font = "xft:FantasqueSansMono Nerd Font:weight=bold:pixelsize=14:antialias=true:hinting=true",
+        { font = "xft:FantasqueSansMono Nerd Font:weight=bold:pixelsize=16:antialias=true:hinting=true",
           bgColor = themeColor background,
           fgColor = themeColor text,
           lowerOnStart = True,
           hideOnStart = False,
           allDesktops = True,
-          additionalFonts = ["Noto Sans Mono:pixelsize=14"],
+          additionalFonts = ["Noto Sans Mono:pixelsize=16"],
           persistent = True,
           commands =
             [ -- 
@@ -31,13 +33,13 @@ mkConfig theme =
               Run $ Network "wlan0" [] 10,
               Run $ Battery ["-t", "<leftvbar> <left>%"] 100,
               Run $ Alsa "default" "Master" ["-t", "<volume>% 墳"],
-              Run UnsafeStdinReader
+              Run $ HandleReader handle "input"
             ],
           alignSep = "}{",
           -- 
           template =
             " \xe61f " ++ sep
-              ++ "%UnsafeStdinReader% }{\
+              ++ "%input% }{\
                  \%kbd%"
               ++ sep
               ++ "<action=`amixer set Master toggle` button=1>"
@@ -49,5 +51,8 @@ mkConfig theme =
               ++ "%trayerpad%"
         }
 
-main :: IO ()
-main = getTheme "xmobar" >>= configFromArgs . mkConfig >>= xmobar
+
+main :: Handle -> Theme -> IO ()
+main handle theme = do
+  let conf = mkConfig handle theme
+  xmobar conf
