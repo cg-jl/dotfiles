@@ -7,7 +7,7 @@ export MANPAGER="nvim -c 'set ft=man' -"
 xset r rate 300 50 # faster scrolling with keys
 
 # so that github cli doesn't launch nano again, duh
-set -g GIT_EDITOR $EDITOR
+set -g GIT_EDITOR nvim
 
 function add-to-path --argument dir --description "adds argument to path if it doesn't exist in path yet."
   if test -d $dir
@@ -83,13 +83,8 @@ alias lt='lsd -aT --color=always'
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 
-source "$HOME/.config/fish/git_aliases.fish"
 
-# setup dotnet completion
-# export DOTNET_ROOT=/snap/dotnet-sdk/
-# export MsBuildSDKsPath=$DOTNET_ROOT/sdk/($DOTNET_ROOT/dotnet --version)/Sdks
-# export PATH="${PATH}:${DOTNET_ROOT}"
-# complete -f -c dotnet -a "(dotnet complete)"
+source "$HOME/.config/fish/git_aliases.fish"
 
 source ("/usr/bin/starship" init fish --print-full-init | psub)
 
