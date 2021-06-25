@@ -18,19 +18,28 @@ description:         Please see the README on GitHub at <https://github.com/gith
 dependencies:
 - base >= 4.7 && < 5
 - xmonad-themes
-- xmonad
-- xmonad-contrib
-- xmobar
-- process
 
 library:
-  source-dirs: src
+  source-dirs: common
 
 executables:
-
   xmonad:
     main:                Main.hs
-    source-dirs:         src
+    source-dirs:         xmonad
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - xmonad
+    - xmonad-contrib
+    - xmonad-xmobar-conf
+
+
+
+  xmobar:
+    main:               Main.hs
+    source-dirs:        xmobar
     ghc-options:
     - -threaded
     - -rtsopts
@@ -38,6 +47,3 @@ executables:
     dependencies:
     - xmobar
     - xmonad-xmobar-conf
-
-
-

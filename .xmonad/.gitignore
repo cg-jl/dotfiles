@@ -1,2 +1,2 @@
-xmonad.errors
-.stack-work
+.stack-work/
+*~

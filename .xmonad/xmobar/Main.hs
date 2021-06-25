@@ -1,27 +1,25 @@
-module XmobarConfig.Main (main) where
-
--- import Xmobar.Plugins.HandleReader
+module Main (main) where
 
 import Common
-import System.IO (Handle, hFlush, hPutStrLn, stderr, stdout)
+import System.IO (hPutStrLn, stderr)
 import Themes
 import Xmobar
 
 xmobarColor :: String -> String -> String
 xmobarColor col msg = "<fc=" ++ col ++ ">" ++ msg ++ "</fc>"
 
-mkConfig :: Handle -> Theme -> Config
-mkConfig handle theme =
+mkConfig :: Theme -> Config
+mkConfig theme =
   let themeColor = (`colorString` theme)
       sep = xmobarColor (themeColor separators) " :: "
    in defaultConfig
-        { font = "xft:FantasqueSansMono Nerd Font:weight=bold:pixelsize=16:antialias=true:hinting=true",
+        { font = "xft:FantasqueSansMono Nerd Font:weight=bold:pixelsize=14:antialias=true:hinting=true",
           bgColor = themeColor background,
           fgColor = themeColor text,
           lowerOnStart = True,
           hideOnStart = False,
           allDesktops = True,
-          additionalFonts = ["Noto Sans Mono:pixelsize=16"],
+          additionalFonts = ["Noto Sans Mono:pixelsize=14"],
           persistent = True,
           commands =
             [ -- 
@@ -33,13 +31,13 @@ mkConfig handle theme =
               Run $ Network "wlan0" [] 10,
               Run $ Battery ["-t", "<leftvbar> <left>%"] 100,
               Run $ Alsa "default" "Master" ["-t", "<volume>% 墳"],
-              Run $ HandleReader handle "input"
+              Run UnsafeStdinReader
             ],
           alignSep = "}{",
           -- 
           template =
             " \xe61f " ++ sep
-              ++ "%input% }{\
+              ++ "%UnsafeStdinReader% }{\
                  \%kbd%"
               ++ sep
               ++ "<action=`amixer set Master toggle` button=1>"
@@ -51,8 +49,5 @@ mkConfig handle theme =
               ++ "%trayerpad%"
         }
 
-
-main :: Handle -> Theme -> IO ()
-main handle theme = do
-  let conf = mkConfig handle theme
-  xmobar conf
+main :: IO ()
+main = getTheme "xmobar" >>= configFromArgs . mkConfig >>= xmobar

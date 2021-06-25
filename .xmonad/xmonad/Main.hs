@@ -1,15 +1,11 @@
-{-# LANGUAGE FlexibleContexts #-}
+module Main (main) where
 
-module XmonadConfig.Main (main) where
-
--- import Data.Tree
-
-import Common
-import Control.Concurrent
-import Data.List (mapAccumL)
 import Data.Monoid
+-- import Data.Tree
 import System.Exit (exitSuccess)
+import Data.List (mapAccumL)
 import System.IO (Handle, IOMode (ReadWriteMode, WriteMode), hGetContents, hGetLine, hPutStr, hPutStrLn, stderr, withFile)
+import Common
 import Themes
 import XMonad
 import XMonad.Actions.CopyWindow (kill1)
@@ -40,26 +36,19 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.ThreeColumns
 import qualified XMonad.Layout.ToggleLayouts as T (ToggleLayout (Toggle), toggleLayouts)
 import XMonad.Layout.WindowArranger (WindowArrangerMsg (..), windowArrange)
-import XMonad.Operations (restart)
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.SpawnOnce
 import XMonad.Operations (restart)
 
-main :: Handle -> Theme -> IO ()
-main writeHandle theme = do
-  -- TODO: try to get an IO () function to run as a separate
-  -- process, and remove redundant behaviors.
-  --
-  -- Talking about not needing to get the theme twice, talking
-  -- about not needing to produce a separate xmobar binary.
-  xmobarPipe <- spawnPipe "xmobar"
-  xmonad $ xmonadConfig writeHandle theme
-
 myModMask = mod4Mask :: KeyMask
 
 myTerminal = "alacritty" :: String
+
+myNormColor = "#2e3440" :: String
+
+myFocusColor = "#e5e9f0" :: String
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
@@ -113,6 +102,7 @@ myLayoutHook =
     myDefaultLayout =
       noBorders monocle
         ||| tall
+        ||| threeCol
         ||| grid
 
 mapIndices :: Num b => (b -> a -> c) -> b -> [a] -> [c]
@@ -124,15 +114,17 @@ xmobarEscape = concatMap doubleLts
     doubleLts '<' = "<<"
     doubleLts x = [x]
 
-clickable :: String -> Int -> String
-clickable wp index = "<action=xdotool key super+" ++ show index ++ ">" ++ wp ++ "</action>"
-
 myWorkspaces :: [String]
 myWorkspaces =
-  zipWith
-    clickable
+  clickable $
     ["\xf269 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a "]
-    [1 .. 9]
+  where
+    -- [" ", " ", " ", " ", " "]
+
+    clickable = mapIndices mkAction 1
+
+    mkAction :: Int -> String -> String
+    mkAction index workspace = "<action=xdotool key super+" ++ show index ++ ">" ++ workspace ++ "</action>"
 
 myKeys :: [(String, X ())]
 myKeys =
@@ -212,47 +204,51 @@ myKeys =
     ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
   ]
 
-xmonadConfig xmobarHandle theme =
+main :: IO ()
+main = do
+  theme <- getTheme "XMonad"
   let themeColor = (`colorString` theme)
-<<<<<<< HEAD:.xmonad/src/XmonadConfig/Main.hs
-   in ewmh
-        def
-          { manageHook = insertPosition Master Newer <+> manageDocks <+> (isFullscreen --> doFullFloat),
-            handleEventHook = docksEventHook,
-            modMask = myModMask,
-            terminal = myTerminal,
-            startupHook = myStartupHook,
-            layoutHook = myLayoutHook,
-            workspaces = myWorkspaces,
-            borderWidth = 5,
-            normalBorderColor = themeColor (normal . borders),
-            focusedBorderColor = themeColor (focused . borders),
-            -- Log hook
-            logHook =
-              workspaceHistoryHook
-                <+> dynamicLogWithPP
-                  xmobarPP
-                    { ppOutput = hPutStr xmobarHandle,
-                      -- Current workspace in xmobar
-                      ppCurrent = xmobarColor (themeColor Themes.focus) "" . mkWrap,
-                      -- Visible but not current workspace
-                      ppVisible = xmobarColor "#81a1c1" "" . mkWrap,
-                      -- Hidden workspaces in xmobar
-                      ppHidden = xmobarColor (themeColor hidden) "" . mkWrap,
-                      -- Hidden workspaces (no windows)
-                      ppHiddenNoWindows = xmobarColor (themeColor hidden) "" . mkWrap,
-                      -- Title of active window in xmobar
-                      ppTitle = xmobarColor (themeColor Themes.title) "" . shorten 55,
-                      -- Separators in xmobar
-                      ppSep = "<fc=" ++ themeColor separators ++ "> :: </fc>",
-                      -- Urgent workspace
-                      ppUrgent = xmobarColor (themeColor urgent) "",
-                      -- Number of windows in current workspace
-                      ppExtras = [windowCount],
-                      ppOrder = \(ws : l : t : ex) -> [ws, l] ++ ex ++ [t]
-                    }
-                >> updatePointer (0.5, 0.5) (0.5, 0.5)
-          }
-        `additionalKeysP` myKeys
+  xmobarPipe <- spawnPipe "~/.local/bin/xmobar"
+  -- Xmonad
+  launch $
+    ewmh
+      def
+        { manageHook = insertPosition Master Newer <+> manageDocks <+> (isFullscreen --> doFullFloat),
+          handleEventHook = docksEventHook,
+          modMask = myModMask,
+          terminal = myTerminal,
+          startupHook = myStartupHook,
+          layoutHook = myLayoutHook,
+          workspaces = myWorkspaces,
+          borderWidth = 5,
+          normalBorderColor = themeColor (normal . borders),
+          focusedBorderColor = themeColor (focused . borders),
+          -- Log hook
+          logHook =
+            workspaceHistoryHook
+              <+> dynamicLogWithPP
+                xmobarPP
+                  { ppOutput = hPutStrLn xmobarPipe,
+                    -- Current workspace in xmobar
+                    ppCurrent = xmobarColor (themeColor Themes.focus) "" . mkWrap,
+                    -- Visible but not current workspace
+                    ppVisible = xmobarColor "#81a1c1" "" . mkWrap,
+                    -- Hidden workspaces in xmobar
+                    ppHidden = xmobarColor (themeColor hidden) "" . mkWrap,
+                    -- Hidden workspaces (no windows)
+                    ppHiddenNoWindows = xmobarColor (themeColor hidden) "" . mkWrap,
+                    -- Title of active window in xmobar
+                    ppTitle = xmobarColor (themeColor Themes.title) "" . shorten 55,
+                    -- Separators in xmobar
+                    ppSep = "<fc=" ++ themeColor separators ++ "> :: </fc>",
+                    -- Urgent workspace
+                    ppUrgent = xmobarColor (themeColor urgent) "",
+                    -- Number of windows in current workspace
+                    ppExtras = [windowCount],
+                    ppOrder = \(ws : l : t : ex) -> [ws, l] ++ ex ++ [t]
+                  }
+              >> updatePointer (0.5, 0.5) (0.5, 0.5)
+        }
+      `additionalKeysP` myKeys
   where
     mkWrap = wrap " " " "
