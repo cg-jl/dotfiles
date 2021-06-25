@@ -6,7 +6,7 @@ set VIRTUAL_ENV_DISABLE_PROMPT "1"
 export MANPAGER="nvim -c 'set ft=man' -"
 xset r rate 300 50 # faster scrolling with keys
 
--- so that github cli doesn't launch nano again, duh
+# so that github cli doesn't launch nano again, duh
 set -g GIT_EDITOR $EDITOR
 
 function add-to-path --argument dir --description "adds argument to path if it doesn't exist in path yet."
@@ -80,7 +80,7 @@ alias lt='lsd -aT --color=always'
 
 # alias please='sudo'
 # alias tb='nc termbin.com 9999'
-alias git-dots="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 
 source "$HOME/.config/fish/git_aliases.fish"
