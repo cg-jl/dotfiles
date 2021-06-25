@@ -45,6 +45,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.SpawnOnce
+import XMonad.Operations (restart)
 
 main :: Handle -> Theme -> IO ()
 main writeHandle theme = do
@@ -148,7 +149,7 @@ myKeys =
     -- Kill window
     ("M-w", kill1),
     -- Restart xmonad
-    ("M-C-r", spawn "xmonad --restart"),
+    ("M-C-r", restart "xmonad" True), -- for more info look at: xmonad-git/XMonad/Main.hs#L159
     -- Quit xmonad
     ("M-C-q", io exitSuccess),
     ----------------- Floating windows -----------------
@@ -213,6 +214,7 @@ myKeys =
 
 xmonadConfig xmobarHandle theme =
   let themeColor = (`colorString` theme)
+<<<<<<< HEAD:.xmonad/src/XmonadConfig/Main.hs
    in ewmh
         def
           { manageHook = insertPosition Master Newer <+> manageDocks <+> (isFullscreen --> doFullFloat),
