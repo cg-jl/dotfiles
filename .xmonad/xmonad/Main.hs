@@ -1,11 +1,12 @@
 module Main (main) where
 
-import Data.Monoid
 -- import Data.Tree
-import System.Exit (exitSuccess)
-import Data.List (mapAccumL)
-import System.IO (Handle, IOMode (ReadWriteMode, WriteMode), hGetContents, hGetLine, hPutStr, hPutStrLn, stderr, withFile)
+
 import Common
+import Data.List (mapAccumL)
+import Data.Monoid
+import System.Exit (exitSuccess)
+import System.IO (Handle, IOMode (ReadWriteMode, WriteMode), hGetContents, hGetLine, hPutStr, hPutStrLn, stderr, withFile)
 import Themes
 import XMonad
 import XMonad.Actions.CopyWindow (kill1)
@@ -36,11 +37,11 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.ThreeColumns
 import qualified XMonad.Layout.ToggleLayouts as T (ToggleLayout (Toggle), toggleLayouts)
 import XMonad.Layout.WindowArranger (WindowArrangerMsg (..), windowArrange)
+import XMonad.Operations (restart)
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.SpawnOnce
-import XMonad.Operations (restart)
 
 myModMask = mod4Mask :: KeyMask
 
@@ -116,7 +117,7 @@ xmobarEscape = concatMap doubleLts
 
 myWorkspaces :: [String]
 myWorkspaces =
-  clickable $
+  clickable
     ["\xf269 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a "]
   where
     -- [" ", " ", " ", " ", " "]
