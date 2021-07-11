@@ -4,7 +4,7 @@ set -g EDITOR nvim
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
 export MANPAGER="nvim -c 'set ft=man' -"
-xset r rate 300 50 # faster scrolling with keys
+# xset r rate 300 50 # faster scrolling with keys
 
 # so that github cli doesn't launch nano again, duh
 set -g GIT_EDITOR nvim
@@ -92,14 +92,7 @@ source ("/usr/bin/starship" init fish --print-full-init | psub)
 export FZF_TMUX_OPTS="-p"
 export FZF_CTRL_R_OPTS="--reverse --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
-thefuck --alias | source
-
 status --is-interactive; and jfetch
-
-
-function tmux --description "override tmux"
-  /usr/bin/tmux -2 $argv
-end
 
 
 # vim:ft=fish

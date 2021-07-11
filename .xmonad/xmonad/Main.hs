@@ -106,9 +106,6 @@ myLayoutHook =
         ||| threeCol
         ||| grid
 
-mapIndices :: Num b => (b -> a -> c) -> b -> [a] -> [c]
-mapIndices f start = snd . mapAccumL (\i b -> (i + 1, f i b)) start
-
 xmobarEscape :: String -> String
 xmobarEscape = concatMap doubleLts
   where
@@ -117,15 +114,15 @@ xmobarEscape = concatMap doubleLts
 
 myWorkspaces :: [String]
 myWorkspaces =
-  clickable
-    ["\xf269 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a "]
-  where
-    -- [" ", " ", " ", " ", " "]
+  ["\xf269 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a "]
 
-    clickable = mapIndices mkAction 1
+-- where
+--   -- [" ", " ", " ", " ", " "]
 
-    mkAction :: Int -> String -> String
-    mkAction index workspace = "<action=xdotool key super+" ++ show index ++ ">" ++ workspace ++ "</action>"
+--   clickable = mapIndices mkAction 1</action>"
+
+--   mkAction :: Int -> String -> String
+--n index workspace = "<action=xdotool key super+" ++ show index ++ ">" ++ workspace ++ "</action>"
 
 myKeys :: [(String, X ())]
 myKeys =

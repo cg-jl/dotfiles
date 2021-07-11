@@ -1,4 +1,8 @@
 background_opacity: 0.93
+window:
+  padding:
+    x: 4
+    y: 4
 colors:
   bright:
     black: '#4c566a'
@@ -59,7 +63,7 @@ font:
   normal:
     family: FantasqueSansMono  Nerd Font
     style: Regular
-  size: 10.9
+  size: 10.5
 shell:
   args:
   - '-2'

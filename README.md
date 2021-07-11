@@ -3,6 +3,13 @@
 Ah, home. Sweet home. And I'm not talking about your roof, but more specifically `$HOME`. This place is the one of the most disorganised places on a dev's
 computer, only `/usr/lib` and `/usr/bin` cause more havoc. But it is indeed the most beloved one.
 
+## Trying polybar
+
+I've decided to start with [polybar](https://github.com/polybar/polybar). I downloaded [polybar themes](https://github.com/adi1090x/polybar-themes/tree/46154c5283861a6f0a440363d82c4febead3c818)
+and customized the `material` variant to match the nord color palette,
+and changed some modules. I'll be taking inspiration from various
+sources, and I'll eventually settle in my own config.
+
 ## How it looks
 
 ![screenshot](./screenshots/nord.png)
@@ -33,52 +40,6 @@ tmux -f cybergsus-dotfiles/.tmux.conf
 ```
 to run it inside a separate terminal session (with alacritty, you would do `alacritty -e` plus the thing above) and **not messing yours up**.
 
-The xmonad config requires `stack` and you need to run `stack build` inside the `.xmonad` directory the first time. Make sure
-
-When testing the xmonad config,
-**please** use [Xephyr](https://wiki.archlinux.org/title/Xephyr) so you don't mess up your current desktop config:
-
-```sh
-Xephyr -br -ac -noreset -screen 1280x720 :1
-```
-
-and then running xmonad like this:
-
-```sh
-DISPLAY=:1 stack exec xmonad
-```
-
-That way you won't have to install it completely. I completely discourage from installing, unless
-you know exactly what you're doing.
-
 ## Tips 
 
-Finally, I came across a tutorial which told me how to 
-set it up and not be a pain to update it.
-
-
-I ran this:
-
-
-```sh
-git --bare ~/.cfg # ~/.cfg is the directory containing the git repo, don't f with it!
-```
-
-then added this line to my fish config:
-
-```sh
-alias git-dots="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-```
-
-and **resourced the config**
-
-finally, told git not to annoy me with thousands of untracked
-
-```sh
-git-dots config --local status.showUntrackedFiles no
-```
-
-This is my specialization of the [atlassian tutorial](https://www.atlassian.com/git/tutorials/dotfiles). 
-
-
-
+For managing dots, I strongly recommend the [atlassian tutorial](https://www.atlassian.com/git/tutorials/dotfiles).
