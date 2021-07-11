@@ -23,32 +23,12 @@ so I'm going to list only the configurations relevant to the config from the scr
   - [neovim](./.config/nvim): It is a submodule, so I'd init it if you want to try it. It's completely complementary, not needed for the looks
   - [fish](./.config/fish): My current shell.
   - [picom](./.config/picom): I use [ibhagwan's variant](https://github.com/ibhagwan/picom) of picom to get rounded corners. You have to install it manually, or `picom-ibhagwan-git` from the AUR if you use Arch Linux.
-  - [tmux](./.tmux.conf): Don't forget about tpm in `.tmux/plugins/tpm`, it is a necessary submodule if you want to have my tmux config.
+  - [tmux](./.tmux.conf): Don't forget about tpm in `.tmux/plugins/tpm`, it is a necessary submodule if you want to have my tmux config. On first launch you will need to press `<prefix>+I` (shift included) so tpm can install the theme.
   - [starship prompt](./.config/starship.toml): Prompt configuration for the [starship project](https://starship.rs/)
 
 ## Font
 
 The font is `Fantasque Sans Mono`, the [Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono) variant. Everywhere, as far as I'm concerned.
-
-## How to clone it
-
-If you want to test some parts out, I suggest doing
-
-```sh
-git clone --recurse-submodules https://github.com/CyberGsus/dotfiles cybergsus-dotfiles
-```
-
-
-and **reading** the config files of whatever you're trying so you don't miss on details.
-
-The tmux config will require you to press `<prefix>+I` (shift included) so it downloads
-the extra plugins. It only comes with [`tpm`](https://github.com/tmux-plugins/tpm) to be able to install them.
-
-Use
-```sh
-tmux -f cybergsus-dotfiles/.tmux.conf
-```
-to run it inside a separate terminal session (with alacritty, you would do `alacritty -e` plus the thing above) and **not messing yours up**.
 
 ## Tips 
 
