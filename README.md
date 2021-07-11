@@ -6,6 +6,7 @@ computer, only `/usr/lib` and `/usr/bin` cause more havoc. But it is indeed the 
 ## How it looks
 
 ![screenshot](./screenshots/nord.png)
+![screenshot-working](./screenshots/nord-work.png)
 
 The theme is [nord based](https://www.nordtheme.com/), check them out, the nord team is doing a great job!<br>
 Also, as a sidenote, disable your dark reader on the website, it'll mess up the colors. Use the night theme moon on the right corner of the page.
