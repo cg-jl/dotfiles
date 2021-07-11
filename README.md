@@ -24,6 +24,7 @@ so I'm going to list only the configurations relevant to the config from the scr
   - [fish](./.config/fish): My current shell.
   - [picom](./.config/picom): I use [ibhagwan's variant](https://github.com/ibhagwan/picom) of picom to get rounded corners. You have to install it manually, or `picom-ibhagwan-git` from the AUR if you use Arch Linux.
   - [tmux](./.tmux.conf): Don't forget about tpm in `.tmux/plugins/tpm`, it is a necessary submodule if you want to have my tmux config.
+  - [starship prompt](./.config/starship.toml): Prompt configuration for the [starship project](https://starship.rs/)
 
 ## Font
 
