@@ -7,12 +7,13 @@
 [submodule ".xmonad/xmobar-git"]
   path = .xmonad/xmobar-git
   url = https://github.com/jaor/xmobar
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = https://github.com/CyberGsus/neovim-setup
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule ".xmonad/xmonad-themes"]
   path = .xmonad/xmonad-themes
   url = https://github.com/CyberGsus/xmonad-themes
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/CyberGsus/neovim-setup
+	branch = lua
