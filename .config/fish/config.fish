@@ -84,9 +84,7 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 
 
-source "$HOME/.config/fish/git_aliases.fish"
-
-source ("/usr/bin/starship" init fish --print-full-init | psub)
+source ("$HOME/.cargo/bin/starship" init fish --print-full-init | psub)
 
 # tmux + fzf = <3
 export FZF_TMUX_OPTS="-p"

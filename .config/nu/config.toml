@@ -1,4 +1,4 @@
-path = ["/home/gsus/.cargo/bin", "/usr/local/bin", "/usr/local/sbin", "/usr/bin", "/usr/sbin", "/var/lib/snapd/snap/bin"]
+path = ["/home/gsus/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin", "/home/gsus/.cargo/bin", "/usr/local/bin", "/usr/local/sbin", "/usr/bin", "/usr/sbin", "/var/lib/snapd/snap/bin", "/home/gsus/go/bin"]
 prompt = "starship prompt"
 skip_welcome_message = true
 startup = ["mkdir ~/.cache/startup", "starship init nu | save ~/.cache/starship/init.nu", "source ~/.cache/starship/init.nu", "source ~/.config/nu/init.nu"]
@@ -6,11 +6,10 @@ table_mode = "light"
 
 [env]
 ALACRITTY_LOG = "/tmp/Alacritty-13234.log"
-CMD_DURATION_MS = "15"
+CMD_DURATION_MS = "13"
 COLORTERM = "truecolor"
 DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/1000/bus"
 DESKTOP_SESSION = "i3"
-DISPLAY = ":2"
 GDMSESSION = "i3"
 GDM_LANG = "en_US.UTF-8"
 HOME = "/home/gsus"
@@ -22,8 +21,10 @@ SHELL = "/home/gsus/.cargo/bin/nu"
 SHLVL = "0"
 SSH_AGENT_PID = "5671"
 SSH_AUTH_SOCK = "/tmp/ssh-XXXXXX96LHvF/agent.5648"
+STARSHIP_SESSION_KEY = "LJLbt0DXnvAt4PQU"
+STARSHIP_SHELL = "nu"
 SYSTEMD_EXEC_PID = "5541"
-TERM = "tmux-256color"
+TERM = "xterm-256color"
 TMUX = "/tmp/tmux-1000/default,13246,0"
 TMUX_PANE = "%0"
 TMUX_PLUGIN_MANAGER_PATH = "/home/gsus/.tmux/plugins/"
