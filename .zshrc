@@ -11,6 +11,8 @@ add-to-path $HOME/go/bin
 # TODO: make something to use the toolchain that is relevant to the project
 add-to-path $HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin
 
+# set a correct format for `time`:
+TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
 # ls alias
 alias ls='lsd -l --color=auto'
 
@@ -19,6 +21,9 @@ source <(/home/gsus/.cargo/bin/starship init zsh --print-full-init)
 # syntax highlighting
 source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
+
+alias gap="git add --patch"
+alias dots="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
