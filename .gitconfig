@@ -1,0 +1,16 @@
+[user]
+	email = cyber.gsuscode@gmail.com
+	name = Cyber Gsus
+[init]
+	defaultBranch = dev
+[core]
+	editor = nvim
+	pager = bat
+[pull]
+	rebase = false
+
+[url "https://github.com/"]
+	pullInsteadOf = git@github.com:
+	fetchInsteadOf = git@github.com:
+[alias]
+	ap = add --patch
