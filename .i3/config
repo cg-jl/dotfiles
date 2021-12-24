@@ -177,7 +177,9 @@ bindsym --release $mod+Shift+s exec "scrot"
 
 
 # <colorclass> <border> <background> <text> <indicator> <child_border>
-client.focused  #88c0d0 #2e3440 #e5e9f0 #68809a #80c0d0
+# nord
+# client.focused  #88c0d0 #2e3440 #e5e9f0 #68809a #80c0d0
+client.focused  #8ec07c   #282828 #ebdbb2 #68809a #8ec07c
 
 #client.focused		#458588 #458588 #191919 #b16286 #458588
 #client.unfocused	#191919 #191919 #458588 #191919 #242424

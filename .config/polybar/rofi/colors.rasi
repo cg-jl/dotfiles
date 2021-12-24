@@ -1,10 +1,22 @@
 /* colors */
 
-* {
+/* nord */
+/* * {
   al:   #00000000;
   bg:   #2e3440ff;
   bga:  #88c0d033;
   bar:  #1F1F1FFF;
   fg:   #FFFFFFFF;
   ac:   #88c0d0FF;
+} */
+
+
+/* gruvbox */
+* {
+  al:   #00000000; /* search text background */
+  bg:   #282828ff;
+  bga:  #ebdbb233; /* selected entry background */
+  bar:  #1d2021FF;
+  fg:   #ebdbb2FF; /* entry text foreground */
+  ac:   #8ec07cFF; /* border & search background  */
 }
