@@ -43,18 +43,19 @@ colors:
     text: CellBackground
 env:
   TERM: xterm-256color
+font-family:  &font-family
+  agave Nerd Font Mono
 font:
   bold:
-    family: agave Nerd Font Mono
+    family: *font-family
     style: Bold
   italic:
-    family: agave Nerd Font Mono
+    family: *font-family
     style: Italic
   normal:
-    family: agave Nerd Font Mono
+    family: *font-family
     style: Regular
   size: 13
-font-family: agave Nerd Font Mono
 shell:
   args:
   - '-2'
