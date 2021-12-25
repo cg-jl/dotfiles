@@ -8,6 +8,7 @@ add-to-path() {
 
 add-to-path $HOME/.cargo/bin
 add-to-path $HOME/go/bin
+add-to-path $HOME/.local/bin
 # TODO: make something to use the toolchain that is relevant to the project
 add-to-path $HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin
 
