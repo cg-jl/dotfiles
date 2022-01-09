@@ -44,7 +44,7 @@ colors:
 env:
   TERM: xterm-256color
 font-family:  &font-family
-  agave Nerd Font Mono
+  JetBrainsMono Nerd Font Mono
 font:
   bold:
     family: *font-family
@@ -55,7 +55,7 @@ font:
   normal:
     family: *font-family
     style: Regular
-  size: 13
+  size: 12
 shell:
   args:
   - '-2'
