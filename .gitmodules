@@ -17,3 +17,12 @@
 	path = .config/nvim
 	url = https://github.com/CyberGsus/neovim-setup
 	branch = lua
+[submodule ".zsh/autocomplete"]
+	path = .zsh/autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git
+[submodule ".zsh/autosuggestions"]
+	path = .zsh/autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".zsh/syntax-highlighting"]
+	path = .zsh/syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
