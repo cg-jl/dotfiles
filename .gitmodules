@@ -2,12 +2,12 @@
   path = xmonad/.xmonad/xmonad-git
   url = https://github.com/xmonad/xmonad
 [submodule "xmonad/.xmonad/xmonad-contrib"]
-  path = xmonad/.xmonad/xmonad-contrib
-  url = https://github.com/xmonad/xmonad-contrib
+	path = xmonad/.xmonad/xmonad-contrib
+	url = https://github.com/xmonad/xmonad-contrib
 [submodule "xmonad/.xmonad/xmobar-git"]
   path = xmonad/.xmonad/xmobar-git
   url = https://github.com/jaor/xmobar
-[submodule "xmonad/.tmux/plugins/tpm"]
+[submodule "tmux/.tmux/plugins/tpm"]
 	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "xmonad/.xmonad/xmonad-themes"]
@@ -26,3 +26,9 @@
 [submodule "zsh/.zsh/syntax-highlighting"]
 	path = zsh/.zsh/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "xmonad/.xmonad/xmonad"]
+	path = xmonad/.xmonad/xmonad
+	url = https://github.com/xmonad/xmonad
+[submodule "xmonad/.xmonad/xmobar"]
+	path = xmonad/.xmonad/xmobar
+	url = https://github.com/jaor/xmobar
