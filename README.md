@@ -33,3 +33,8 @@ The font in alacritty is `JetBrainsMono Nerd Font`, the same `nerd-fonts` repo.
 ## Tips 
 
 To manage my dotfiles I switched to using [`stow`](https://www.gnu.org/software/stow/). ThePrimeagen does a great work on his [explanation video](https://www.youtube.com/watch?v=tkUllCAGs3c).
+
+## I want to see Nord again!
+
+This summer I'll be working on the nord-themed side to merge it with this one, just with the color themes/wallpapers updated.
+Meanwhile, this is the last [commit](https://github.com/cybergsus/dotfiles/tree/e39efa17255f65eaf3aa107485a33a1826a107fa) where I was still using Nord.
