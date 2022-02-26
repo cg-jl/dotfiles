@@ -5,32 +5,31 @@ computer, only `/usr/lib` and `/usr/bin` cause more havoc. But it is indeed the 
 
 ## How it looks
 
-![screenshot](./screenshots/nord.png)
-![screenshot-working](./screenshots/nord-work.png)
+![screenshot](./screenshots/gruvbox.png)
+![screenshot-working](./screenshots/gruvbox-work.png)
 
-The theme is [nord based](https://www.nordtheme.com/), check them out, the nord team is doing a great job!<br>
-Also, as a sidenote, disable your dark reader on the website, it'll mess up the colors. Use the night theme moon on the right corner of the page.
+The theme is [gruvbox based](https://github.com/morhetz/gruvbox).
 
-The wallpaper is from [this awesome person](https://raw.githubusercontent.com/Blu3Jive001/Wallpapers/master/Nordic/Simplistic/Minimal-Nord.png), 
-under `Nordic/Simplistic/Minimal-Nord.png`.
 
 ## What is being used in the screenshot?
 
 I try my best to keep my dotfiles simple and only put things that I'm currently using. Sadly, this is not always possible, specially in the case of window manager configuration,
 so I'm going to list only the configurations relevant to the config from the screenshot:
-  - [polybar](./.config/polybar): The three bars at the top.
-  - [i3](./.config/.i3/config): I'm using [i3-gaps](https://github.com/Airblader/i3) as my window manager.
-  - [alacritty](./.config/alacritty/alacritty.yml): If you're not going to use `tmux`, remove the `shell` key and alacritty will use your default shell.
-  - [neovim](./.config/nvim): It is a submodule, so I'd init it if you want to try it. It's completely complementary, not needed for the looks
-  - [fish](./.config/fish): My current shell.
-  - [picom](./.config/picom): I use [ibhagwan's variant](https://github.com/ibhagwan/picom) of picom to get rounded corners. You have to install it manually, or `picom-ibhagwan-git` from the AUR if you use Arch Linux.
-  - [tmux](./.tmux.conf): Don't forget about tpm in `.tmux/plugins/tpm`, it is a necessary submodule if you want to have my tmux config. On first launch you will need to press `<prefix>+I` (shift included) so tpm can install the theme.
-  - [starship prompt](./.config/starship.toml): Prompt configuration for the [starship project](https://starship.rs/)
+  - [polybar](./polybar): The three bars at the top.
+  - [i3](./i3): I'm using [i3-gaps](https://github.com/Airblader/i3) as my window manager. Don't forget to check out [rc](./rc) for the init scripts used by the configuration.
+  - [alacritty](./alacritty): If you're not going to use `tmux`, remove the `shell` key and alacritty will use your default shell.
+  - [neovim](./nvim): It is a submodule, so I'd init it if you want to try it. It's completely complementary, not needed for the looks
+  - [zsh](./zsh): My current shell.
+  - [picom](./picom): Even though I stopped using rounded corners, you might want to take a look at it.
+  - [tmux](./tmux): Don't forget about tpm in `.tmux/plugins/tpm`, it is a necessary submodule if you want to have my tmux config. On first launch you will need to press `<prefix>+I` (shift included) so tpm can install the theme.
+  - [starship prompt](./starship): Prompt configuration for the [starship project](https://starship.rs/)
+  - [wallpaper](./wallpapers/.local/share/wallpapers/gruvbox_astronaut2.jpg): At the time of writing this, I couldn't get the original artist/artwork for the background, but I used [`gruvbox-factory`](https://github.com/paulopacitti/gruvbox-factory) to make the colors gruvbox-themed.
 
 ## Font
 
-The font is `Fantasque Sans Mono`, the [Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono) variant. Everywhere, as far as I'm concerned.
+The font in polybar is `Fantasque Sans Mono`, the [Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono) variant. Everywhere, as far as I'm concerned.
+The font in alacritty is `JetBrainsMono Nerd Font`, the same `nerd-fonts` repo.
 
 ## Tips 
 
-For managing dots, I strongly recommend the [atlassian tutorial](https://www.atlassian.com/git/tutorials/dotfiles).
+To manage my dotfiles I switched to using [`stow`](https://www.gnu.org/software/stow/). ThePrimeagen does a great work on his [explanation video](https://www.youtube.com/watch?v=tkUllCAGs3c).
