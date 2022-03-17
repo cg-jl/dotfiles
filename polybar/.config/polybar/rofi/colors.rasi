@@ -1,5 +1,6 @@
 /* colors */
 
+
 /* nord */
 /* * {
   al:   #00000000;
@@ -12,11 +13,21 @@
 
 
 /* gruvbox */
-* {
+/* * {
   al:   #00000000; /* search text background */
   bg:   #282828ff;
   bga:  #ebdbb233; /* selected entry background */
   bar:  #1d2021FF;
   fg:   #ebdbb2FF; /* entry text foreground */
   ac:   #8ec07cFF; /* border & search background  */
+} */
+
+/* rose-pine */
+ * {
+  al:   #00000000; /* search text background */
+  bg:   #191724ff;
+  bga:  #524f6733; /* selected entry background */
+  bar:  #1f1d2eFF;
+  fg:   #e0def4FF; /* entry text foreground */
+  ac:   #ebbcbaFF; /* border & search background  */
 }
