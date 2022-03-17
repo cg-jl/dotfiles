@@ -12,6 +12,7 @@ add-to-path $HOME/.local/bin
 add-to-path $HOME/.composer/vendor/bin
 # TODO: make something to use the toolchain that is relevant to the project
 add-to-path $HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin
+add-to-path $HOME/.local/nvim/bin
 
 export GIT_EDITOR=nvim
 export BAT_THEME="gruvbox-dark"
