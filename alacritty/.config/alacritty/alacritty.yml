@@ -1,50 +1,49 @@
 background_opacity: 0.93
 colors:
   bright:
-    black: '#928374'
-    blue: '#83a598'
-    cyan: '#8ec07c'
-    green: '#b8bb26'
-    magenta: '#d3869b'
-    red: '#fb4934'
-    white: '#ebdbb2'
-    yellow: '#fabd2f'
+    black: '0x6e6a86'
+    blue: '0x31748f'
+    cyan: '0xebbcba'
+    green: '0x9ccfd8'
+    magenta: '0xc4a7e7'
+    red: '0xeb6f92'
+    white: '0xe0def4'
+    yellow: '0xf6c177'
   cursor:
-    cursor: CellForeground
-    text: CellBackground
-  dim:
-    black: '#32302f'
-    blue: '#076678'
-    cyan: '#427b58'
-    green: '#79740e'
-    magenta: '#8f3f71'
-    red: '#9d0006'
-    white: '#928374'
-    yellow: '#b57614'
+    cursor: '0x796268'
+    text: '0x191724'
+  hints:
+    end:
+      background: '#26233a'
+      foreground: '#555169'
+    start:
+      background: '#26233a'
+      foreground: '#6e6a86'
+  line_indicator:
+    background: None
+    foreground: None
   normal:
-    black: '#282828'
-    blue: '#458588'
-    cyan: '#689d6a'
-    green: '#98971a'
-    magenta: '#b16286'
-    red: '#cc241d'
-    white: '#a89984'
-    yellow: '#d79921'
+    black: '0x6e6a86'
+    blue: '0x31748f'
+    cyan: '0xebbcba'
+    green: '0x9ccfd8'
+    magenta: '0xc4a7e7'
+    red: '0xeb6f92'
+    white: '0xe0def4'
+    yellow: '0xf6c177'
   primary:
-    background: '#282828'
-    bright_foreground: '#f9f5d7'
-    dim_foreground: '#f2e5bc'
-    foreground: '#fbf1c7'
+    background: '0x191724'
+    foreground: '0xe0def4'
   selection:
-    background: CellForeground
-    text: CellBackground
+    background: '0x2A2738'
+    text: CellForeground
   vi_mode_cursor:
-    cursor: CellForeground
-    text: CellBackground
+    cursor: '0x796268'
+    text: '0x191724'
 env:
   TERM: xterm-256color
-font-family:  &font-family
-  JetBrainsMono
+font-family: &font-family
+  JetBrainsMono Nerd Font
 font:
   bold:
     family: *font-family
