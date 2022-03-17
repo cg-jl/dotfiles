@@ -32,3 +32,5 @@
 [submodule "xmonad/.xmonad/xmobar"]
 	path = xmonad/.xmonad/xmobar
 	url = https://github.com/jaor/xmobar
+[submodule "nvim"]
+	branch = rose-pine
