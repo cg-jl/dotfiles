@@ -1,6 +1,6 @@
 # dotfiles
 
-Ah, home. Sweet home. And I'm not talking about your roof, but more specifically `$HOME`. This place is the one of the most disorganised places on a dev's
+Ah, home. Sweet home. And I'm not talking about your roof, but more specifically `$HOME`. This place is one of the most disorganised places on a dev's
 computer, only `/usr/lib` and `/usr/bin` cause more havoc. But it is indeed the most beloved one.
 
 ## How it looks
