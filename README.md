@@ -36,7 +36,7 @@ To manage my dotfiles I switched to using [`stow`](https://www.gnu.org/software/
 
 ## I want to see gruvbox!
 
-Switch back to the `main` branch, which will be renamed to `gruvbox` in the future.
+Switch to the [`gruvbox`](https://github.com/cybergsus/dotfiles/tree/gruvbox) branch.
 
 ## I want to see Nord again!
 
