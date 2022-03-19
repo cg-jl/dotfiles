@@ -5,10 +5,10 @@ computer, only `/usr/lib` and `/usr/bin` cause more havoc. But it is indeed the 
 
 ## How it looks
 
-![screenshot](./screenshots/gruvbox.png)
-![screenshot-working](./screenshots/gruvbox-work.png)
+![screenshot](./screenshots/rose-pine.png)
+![screenshot-working](./screenshots/rose-pine-work.png)
 
-The theme is [gruvbox based](https://github.com/morhetz/gruvbox).
+The theme is [based on rose-pine](https://rosepinetheme.com/).
 
 
 ## What is being used in the screenshot?
@@ -33,6 +33,10 @@ The font in alacritty is `JetBrainsMono Nerd Font`, the same `nerd-fonts` repo.
 ## Tips 
 
 To manage my dotfiles I switched to using [`stow`](https://www.gnu.org/software/stow/). ThePrimeagen does a great work on his [explanation video](https://www.youtube.com/watch?v=tkUllCAGs3c).
+
+## I want to see gruvbox!
+
+Switch back to the `main` branch, which will be renamed to `gruvbox` in the future.
 
 ## I want to see Nord again!
 
