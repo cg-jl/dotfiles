@@ -23,7 +23,7 @@ so I'm going to list only the configurations relevant to the config from the scr
   - [picom](./picom): Even though I stopped using rounded corners, you might want to take a look at it.
   - [tmux](./tmux): Don't forget about tpm in `.tmux/plugins/tpm`, it is a necessary submodule if you want to have my tmux config. On first launch you will need to press `<prefix>+I` (shift included) so tpm can install the theme.
   - [starship prompt](./starship): Prompt configuration for the [starship project](https://starship.rs/)
-  - [wallpaper](./wallpapers/.local/share/wallpapers/gruvbox_astronaut2.jpg): At the time of writing this, I couldn't get the original artist/artwork for the background, but I used [`gruvbox-factory`](https://github.com/paulopacitti/gruvbox-factory) to make the colors gruvbox-themed.
+  - [wallpaper](./wallpapers/.local/share/wallpapers/volcano.jpg): I got it from [alphacoders' website](https://wall.alphacoders.com/by_category.php?id=10&name=Earth+Wallpapers)
 
 ## Font
 
