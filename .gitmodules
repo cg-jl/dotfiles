@@ -1,28 +1,34 @@
-[submodule ".xmonad/xmonad-git"]
-  path = .xmonad/xmonad-git
+[submodule "xmonad/.xmonad/xmonad-git"]
+  path = xmonad/.xmonad/xmonad-git
   url = https://github.com/xmonad/xmonad
-[submodule ".xmonad/xmonad-contrib"]
-  path = .xmonad/xmonad-contrib
-  url = https://github.com/xmonad/xmonad-contrib
-[submodule ".xmonad/xmobar-git"]
-  path = .xmonad/xmobar-git
+[submodule "xmonad/.xmonad/xmonad-contrib"]
+	path = xmonad/.xmonad/xmonad-contrib
+	url = https://github.com/xmonad/xmonad-contrib
+[submodule "xmonad/.xmonad/xmobar-git"]
+  path = xmonad/.xmonad/xmobar-git
   url = https://github.com/jaor/xmobar
-[submodule ".tmux/plugins/tpm"]
-	path = .tmux/plugins/tpm
+[submodule "tmux/.tmux/plugins/tpm"]
+	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule ".xmonad/xmonad-themes"]
-  path = .xmonad/xmonad-themes
+[submodule "xmonad/.xmonad/xmonad-themes"]
+  path = xmonad/.xmonad/xmonad-themes
   url = https://github.com/CyberGsus/xmonad-themes
-[submodule ".config/nvim"]
-	path = .config/nvim
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
 	url = https://github.com/CyberGsus/neovim-setup
-	branch = lua
-[submodule ".zsh/autocomplete"]
-	path = .zsh/autocomplete
+	branch = gruvbox
+[submodule "zsh/.zsh/autocomplete"]
+	path = zsh/.zsh/autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete.git
-[submodule ".zsh/autosuggestions"]
-	path = .zsh/autosuggestions
+[submodule "zsh/.zsh/autosuggestions"]
+	path = zsh/.zsh/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule ".zsh/syntax-highlighting"]
-	path = .zsh/syntax-highlighting
+[submodule "zsh/.zsh/syntax-highlighting"]
+	path = zsh/.zsh/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "xmonad/.xmonad/xmonad"]
+	path = xmonad/.xmonad/xmonad
+	url = https://github.com/xmonad/xmonad
+[submodule "xmonad/.xmonad/xmobar"]
+	path = xmonad/.xmonad/xmobar
+	url = https://github.com/jaor/xmobar
