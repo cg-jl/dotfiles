@@ -44,7 +44,7 @@ colors:
 env:
   TERM: xterm-256color
 font-family:  &font-family
-  JetBrainsMono
+  JetBrains Mono Nerd Font
 font:
   bold:
     family: *font-family
