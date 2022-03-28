@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 50 50"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>Qt SVG Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="#0a0b11" fill-opacity="1" stroke="none" transform="matrix(0.0548323,0,0,-0.0548326,-1.53168,50.7507)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M483.874,13.6906 C735.676,13.6906 939.805,217.82 939.805,469.624 C939.805,721.429 735.676,925.557 483.874,925.557 C232.064,925.557 27.9339,721.429 27.9339,469.624 C27.9339,217.82 232.064,13.6906 483.874,13.6906 "/>
+</g>
+
+<g fill="#ff5370" fill-opacity="1" stroke="none" transform="matrix(0.0548323,0,0,-0.0548326,-1.53168,50.7507)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M479.463,96.8684 C684.051,96.8684 849.907,262.726 849.907,467.318 C849.907,671.91 684.051,837.765 479.463,837.765 C274.867,837.765 109.011,671.91 109.011,467.318 C109.011,262.726 274.867,96.8684 479.463,96.8684 "/>
+</g>
+
+<g fill="#231d2b" fill-opacity="1" stroke="none" transform="matrix(0.0548323,0,0,-0.0548326,-1.53168,50.7507)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M317.19,665.14 C308.663,665.14 300.124,661.816 293.654,655.346 L293.07,654.761 C280.129,641.822 280.129,620.631 293.07,607.691 L436.328,464.434 L293.07,321.03 C280.133,308.094 280.133,287.046 293.07,274.106 L293.654,273.376 C306.59,260.436 327.785,260.436 340.725,273.376 L483.983,416.633 L627.241,273.376 C640.178,260.436 661.372,260.436 674.311,273.376 L674.896,274.106 C687.832,287.042 687.832,308.094 674.896,321.03 L531.638,464.434 L674.896,607.691 C687.832,620.631 687.836,641.826 674.896,654.761 L674.312,655.346 C661.368,668.282 640.178,668.282 627.241,655.346 L483.983,512.089 L340.725,655.346 C334.255,661.816 325.716,665.14 317.19,665.14 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+</g>
+</g>
+</svg>
