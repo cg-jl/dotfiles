@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/gsus/.dotfiles/wallpapers/.local/share/wallpapers/gruvbox_astronaut2.jpg' 
+feh --no-fehbg --bg-fill '/home/gsus/.local/share/wallpapers/monokai.jpg' 

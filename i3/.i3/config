@@ -139,8 +139,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -179,7 +177,10 @@ bindsym --release $mod+Shift+s exec "scrot"
 # <colorclass> <border> <background> <text> <indicator> <child_border>
 # nord
 # client.focused  #88c0d0 #2e3440 #e5e9f0 #68809a #80c0d0
-client.focused  #8ec07c   #282828 #ebdbb2 #68809a #8ec07c
+# gruvbox
+#client.focused  #8ec07c   #282828 #ebdbb2 #68809a #8ec07c
+# monokai pro
+client.focused  #f08d71   #312c2b #e4e3e1 #68809a #f08d71
 
 #client.focused		#458588 #458588 #191919 #b16286 #458588
 #client.unfocused	#191919 #191919 #458588 #191919 #242424

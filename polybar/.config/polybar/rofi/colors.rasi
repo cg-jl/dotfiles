@@ -11,12 +11,23 @@
 } */
 
 
-/* gruvbox */
+/* monokai pro */
 * {
+  al:   #00000000; /* search text background */
+  bg:   #2c2525ff;
+  bga:  #a8a9eb33; /* selected entry background */
+  bar:  #1d2021FF;
+  fg:   #ebdbb2FF; /* entry text foreground */
+  ac:   #05daccFF; /* border & search background  */
+}
+
+
+/* gruvbox */
+/* {
   al:   #00000000; /* search text background */
   bg:   #282828ff;
   bga:  #ebdbb233; /* selected entry background */
   bar:  #1d2021FF;
   fg:   #ebdbb2FF; /* entry text foreground */
   ac:   #8ec07cFF; /* border & search background  */
-}
+}*/
