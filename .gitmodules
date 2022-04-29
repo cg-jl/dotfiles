@@ -16,7 +16,7 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = https://github.com/CyberGsus/neovim-setup
-	branch = gruvbox
+	branch = lua
 [submodule "zsh/.zsh/autocomplete"]
 	path = zsh/.zsh/autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete.git
