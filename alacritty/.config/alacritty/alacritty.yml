@@ -33,7 +33,7 @@ font:
   normal:
     family: JetBrains Mono Nerd Font
     style: Regular
-  size: 13
+  size: 15
 font-family: JetBrains Mono Nerd Font
 shell:
   args:
