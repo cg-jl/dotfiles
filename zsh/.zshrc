@@ -27,14 +27,17 @@ TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
 # ls alias
 alias ls='lsd --color=auto'
 
+
 # starship prompt
 source <(/home/gsus/.cargo/bin/starship init zsh --print-full-init)
 # syntax highlighting
 source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
 
+# git aliases
 alias gap="git add --patch"
-alias dots="git --git-dir=$HOME/.cfg --work-tree=$HOME"
+alias gst="git status"
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
