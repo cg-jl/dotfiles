@@ -180,7 +180,7 @@ bindsym --release $mod+Shift+s exec "scrot"
 # gruvbox
 #client.focused  #8ec07c   #282828 #ebdbb2 #68809a #8ec07c
 # monokai pro
-client.focused  #f08d71   #312c2b #e4e3e1 #68809a #f08d71
+client.focused  #ffffff   #ffffff #ffffff #ffffff #ffffff
 
 #client.focused		#458588 #458588 #191919 #b16286 #458588
 #client.unfocused	#191919 #191919 #458588 #191919 #242424
