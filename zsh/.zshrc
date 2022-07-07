@@ -37,6 +37,7 @@ source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
 # git aliases
 alias gap="git add --patch"
 alias gst="git status"
+alias gpf="git push --force-with-lease"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
