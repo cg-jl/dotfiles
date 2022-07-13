@@ -19,6 +19,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export GIT_EDITOR=nvim
 alias gap='git add --patch'
 alias gst='git status'
+alias gpf='git push --force-with-lease'
 
 # bat theme
 export BAT_THEME=OneHalfDark
