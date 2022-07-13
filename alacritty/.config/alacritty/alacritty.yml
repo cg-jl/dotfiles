@@ -1,0 +1,20 @@
+shell:
+  args:
+    - '-2'
+  program: /usr/bin/tmux
+font:
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Normal
+  size: 12
+window:
+  opacity: 0.93
+  padding:
+    x: 4
+    y: 4
