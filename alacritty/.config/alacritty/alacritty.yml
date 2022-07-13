@@ -1,3 +1,5 @@
+import:
+  - ~/.config/alacritty/themes/one-half-dark.yml
 shell:
   args:
     - '-2'

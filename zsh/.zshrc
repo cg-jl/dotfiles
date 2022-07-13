@@ -2,7 +2,7 @@
 setopt autocd
 
 add-to-path() {
-	export -U PATH=$1{PATH:+:$PATH}
+	export -U PATH=$1${PATH:+:$PATH}
 }
 
 add-to-path $HOME/.cargo/bin
@@ -21,7 +21,7 @@ alias gap='git add --patch'
 alias gst='git status'
 
 # bat theme
-export BAT_THEME=base16
+export BAT_THEME=OneHalfDark
 
 # ls alias
 alias ls='lsd --color=auto'
