@@ -14,7 +14,7 @@ font:
   normal:
     family: JetBrainsMono Nerd Font
     style: Normal
-  size: 12
+  size: 13
 window:
   opacity: 0.93
   padding:
