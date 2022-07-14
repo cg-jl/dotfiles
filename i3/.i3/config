@@ -43,7 +43,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+w kill
 
 # start rofi
-bindsym $mod+m exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/rofi/launcher.rasi
+bindsym $mod+m exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launcher.rasi
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
