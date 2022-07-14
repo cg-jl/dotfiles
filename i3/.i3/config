@@ -182,7 +182,7 @@ bindsym --release $mod+Shift+s exec "scrot"
 # gruvbox
 # client.focused  #8ec07c   #282828 #ebdbb2 #68809a #8ec07c
 # rose-pine
-client.focused  #9ccfd8   #191724 #e0def4 #68809a #9ccfd8
+client.focused  #9ccfd8   #191724 #e0def4 #68809a #dcdfe4
 
 #client.focused		#458588 #458588 #191919 #b16286 #458588
 #client.unfocused	#191919 #191919 #458588 #191919 #242424
@@ -213,12 +213,9 @@ for_window [instance="__scratchpad"] move scratchpad
 for_window [instance="__floating"] floating enable
 for_window [class="__floating"] floating enable
 
-# polybar (using premade theme atm)
-
 # border_radius 10
 gaps inner 15
-gaps top 20
-# smart_gaps on
+smart_gaps on
 
 exec --no-startup-id sh ~/.xsession &
 
