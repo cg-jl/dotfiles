@@ -15,8 +15,8 @@
   url = https://github.com/CyberGsus/xmonad-themes
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
-	url = https://github.com/CyberGsus/neovim-setup
-	branch = gruvbox
+	url = git@github.com:cybergsus/neovim-setup
+	branch = new-dots
 [submodule "zsh/.zsh/autocomplete"]
 	path = zsh/.zsh/autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete.git
@@ -32,8 +32,6 @@
 [submodule "xmonad/.xmonad/xmobar"]
 	path = xmonad/.xmonad/xmobar
 	url = https://github.com/jaor/xmobar
-[submodule "nvim"]
-	branch = rose-pine
 [submodule "zsh/.zsh/zsh-syntax-highlighting"]
 	path = zsh/.zsh/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting
