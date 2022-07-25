@@ -19,18 +19,23 @@ computer, so I haven't riced it to look good "without any extra window".
 
 Here's a list of what these dotfiles configure and a list of interesting links
 
-- [`stow`](https://www.gnu.org/software/stow/): Read [Installing] and [Submodules].
-- `i3-gaps`: [github](https://github.com/Airblader/i3). [config](./i3/.i3/config)
-- `picom` [picom config]
-- `feh`: See [rc](./rc) and [wallpapers](./wallpapers). **IMPORTANT**: Make sure [fehbg](./rc/.fehbg) points
-  to the correct location for the wallpaper.
+- [`stow`](https://www.gnu.org/software/stow/): Read [Installing](#installing) and [Submodules].
+- Wayland only:
+    - [`sway`](https://swaywm.org/): See tips from the [i3 Migration Guide](https://github.com/swaywm/sway/wiki/i3-Migration-Guide)
+        - Check the config to change the background! It doesn't use feh!
+    - [`wofi`](https://hg.sr.ht/~scoopta/wofi): [sway config](sway/.config/sway)
+- Xorg only:
+    - `i3-gaps` (Xorg only): [github](https://github.com/Airblader/i3). [config](./i3/.i3/config)
+    - `picom` (Xorg only) [picom config](./picom/.config/picom)
+    - `feh` (): See [rc](./rc) and [wallpapers](./wallpapers). **IMPORTANT**: Make sure [fehbg](./rc/.fehbg) points
+      to the correct location for the wallpaper.
+    - `rofi`: [config](rofi/.config/rofi). Bound in [i3 config](./i3/.i3/config).
 - `firefox`: Bound in [i3 config].
 - `alacritty`: [config](./alacritty/.config/alacritty/alacritty.yml)
 - `tmux`: [config](./tmux) [Submodules]
 - `zsh`: [config](./zsh) [Submodules]
     - [`lsd`](https://github.com/Peltoche/lsd) is set through aliases
     - prompt requires starship.
-- `rofi`: [config](rofi/.config/rofi). Bound in [i3 config].
 - [`starship`](https://starship.rs/) prompt:
   [config](starship/.config/starship.toml)
 - `neovim` 0.7 stable: [config](./nvim/.config/nvim) [Submodules]
