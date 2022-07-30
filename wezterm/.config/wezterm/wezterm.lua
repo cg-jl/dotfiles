@@ -4,15 +4,13 @@ return {
     -- nice work, wezterm + kitty:
     -- - http://www.leonerd.org.uk/hacks/fixterms/
     -- - https://sw.kovidgoyal.net/kitty/keyboard-protocol/
-    enable_csi_u_key_encoding = true,
-    enable_kitty_keyboard = true,
     hide_tab_bar_if_only_one_tab = true,
     font = wezterm.font 'JetBrainsMono Nerd Font',
     font_size = 14.0,
     color_scheme = 'ayu',
     window_background_opacity = 0.95,
     quick_select_alphabet = 'aoeuqjkxpyhtnsgcrlmwvzfidb',
-    leader = { key = 'mapped:b', mods = 'ALT', timeout_milliseconds = 500 },
+    leader = { key = 'mapped:b', mods = 'ALT', timeout_milliseconds = 300 },
     keys = {
         -- panes
         {
@@ -45,16 +43,36 @@ return {
             mods = 'LEADER',
             action = wezterm.action.AdjustPaneSize { 'Right', 5 },
         },
-
-        -- tabs (equivalent to tmux windows)
         {
             key = 'mapped:h',
             mods = 'LEADER',
-            action = wezterm.action.ActivateTabRelative(-1),
+            action = wezterm.action.ActivatePaneDirection 'Left',
         },
         {
             key = 'mapped:l',
             mods = 'LEADER',
+            action = wezterm.action.ActivatePaneDirection 'Right',
+        },
+        {
+            key = 'mapped:j',
+            mods = 'LEADER',
+            action = wezterm.action.ActivatePaneDirection 'Down',
+        },
+        {
+            key = 'mapped:k',
+            mods = 'LEADER',
+            action = wezterm.action.ActivatePaneDirection 'Up',
+        },
+
+        -- tabs (equivalent to tmux windows)
+        {
+            key = 'mapped:h',
+            mods = 'LEADER|CTRL',
+            action = wezterm.action.ActivateTabRelative(-1),
+        },
+        {
+            key = 'mapped:l',
+            mods = 'LEADER|CTRL',
             action = wezterm.action.ActivateTabRelative(1),
         },
         {
