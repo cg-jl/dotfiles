@@ -5,8 +5,8 @@ xset +fp ~/.local/share/fonts
 sh ~/.fehbg
 
 # dvorak:
-# setxkbmap -layout us,es -variant dvorak,dvorak -option 'grp:alt_space_toggle' &
-setxkbmap -layout us,es -variant dvorak,dvorak -option 'grp:alt_space_toggle' &
+setxkbmap -layout us -variant dvorak &
+
 xset -b &
 xset r rate 300 50 &
 inputplug -d -c ~/.local/scripts/on-new-kbd &
