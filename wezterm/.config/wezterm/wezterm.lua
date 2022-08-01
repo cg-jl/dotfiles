@@ -100,6 +100,13 @@ return {
             action = wezterm.action.ActivateCopyMode
         },
 
+        -- disable ctrl+shift+n
+        { 
+            key = 'mapped:n',
+            mods = 'CTRL|SHIFT',
+            action = wezterm.action.Nop
+        },
+
     },
     mouse_bindings = {
         {
