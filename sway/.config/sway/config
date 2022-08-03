@@ -21,10 +21,11 @@ set $browser firefox
 # on the original workspace that the command was run on.
 # FIXME: convert launcher.rasi to gtk css (~/.config/rofi/launcher.rasi)?
 set $menu wofi --conf NONE -no-lazy-grab --show drun  ~/.config/rofi/launcher.rasi
+set $screenshot grimshot copy area
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/gsus/.dotfiles/wallpapers/tanjiro-nezuko.png fill
+output * bg /home/gsus/.dotfiles/wallpapers/code-green-cyan.png fill
 #
 # Example configuration:
 #
@@ -77,8 +78,7 @@ input type:keyboard {
     # Start your launcher
     bindsym $mod+m exec $menu
 
-    bindsym $mod+s exec grim -g "$(slurp)"
-    bindsym $mod+shift+s exec grim -g "$(slurp)" - | wl-copy
+    bindsym $mod+s exec $screenshot
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
