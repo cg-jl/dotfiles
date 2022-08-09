@@ -25,7 +25,7 @@ set $screenshot grimshot copy area
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/gsus/.dotfiles/wallpapers/code-green-cyan.png fill
+output * bg /home/gsus/.dotfiles/wallpapers/code-blue-purple.png fill
 #
 # Example configuration:
 #
