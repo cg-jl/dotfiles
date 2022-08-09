@@ -8,6 +8,8 @@ return {
     font = wezterm.font 'JetBrainsMono Nerd Font',
     font_size = 14.0,
     color_scheme = 'ayu',
+    check_for_updates = false,
+    show_update_window = false,
     window_background_opacity = 0.95,
     quick_select_alphabet = 'aoeuqjkxpyhtnsgcrlmwvzfidb',
     leader = { key = 'mapped:b', mods = 'ALT', timeout_milliseconds = 300 },
