@@ -34,3 +34,8 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # starship prompt
 source <(starship init zsh --print-full-init)
+
+[ -f "/home/gsus/.ghcup/env" ] && source "/home/gsus/.ghcup/env" # ghcup-env
+
+# opam configuration
+[[ ! -r /home/gsus/.opam/opam-init/init.zsh ]] || source /home/gsus/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
