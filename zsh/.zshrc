@@ -29,8 +29,9 @@ alias ls='lsd --color=auto'
 alias ll='ls -lA'
 
 # syntax highlighting + autosuggestions
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # starship prompt
 source <(starship init zsh --print-full-init)
