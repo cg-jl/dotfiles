@@ -35,6 +35,7 @@
 [submodule "zsh/.zsh/zsh-syntax-highlighting"]
 	path = zsh/.zsh/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting
+	branch = 0.7.1
 [submodule "zsh/.zsh/zsh-autosuggestions"]
 	path = zsh/.zsh/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions
