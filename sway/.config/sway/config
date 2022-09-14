@@ -13,15 +13,15 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term /home/gsus/.local/bin/wezterm
+# Your preferred terminal emulator #/home/gsus/.local/bin/wezterm
+set $term  alacritty
 set $browser firefox
+set $screenshot ~/.local/bin/screenshot.sh
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # FIXME: convert launcher.rasi to gtk css (~/.config/rofi/launcher.rasi)?
-set $menu wofi --conf NONE -no-lazy-grab --show drun  ~/.config/rofi/launcher.rasi
-set $screenshot grimshot copy area
+set $menu wofi --conf NONE -no-lazy-grab --show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -53,6 +53,14 @@ input type:keyboard {
     xkb_layout us
     xkb_variant dvorak
 }
+
+input type:touchpad {
+	tap enabled
+	dwt enabled
+	accel_profile "flat"
+	pointer_accel 0.5
+}
+
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
 #       dwt enabled
