@@ -32,6 +32,7 @@ Here's a list of what these dotfiles configure and a list of interesting links
     - `rofi`: [config](rofi/.config/rofi). Bound in [i3 config](./i3/.i3/config).
 - `firefox`: Bound in [i3 config].
 - `alacritty`: [config](./alacritty/.config/alacritty/alacritty.yml)
+- `kitty`: [config](./kitty/.config/kitty/kitty.conf) [Submodules]
 - `wezterm`: [config](./wezterm/.config/wezterm/wezterm.lua)
 - `tmux`: [config](./tmux) [Submodules]
 - `zsh`: [config](./zsh) [Submodules]
