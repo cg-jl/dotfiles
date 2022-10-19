@@ -5,8 +5,8 @@ return {
     -- - http://www.leonerd.org.uk/hacks/fixterms/
     -- - https://sw.kovidgoyal.net/kitty/keyboard-protocol/
     hide_tab_bar_if_only_one_tab = true,
-    font = wezterm.font 'JetBrainsMono Nerd Font',
-    font_size = 14.0,
+    font = wezterm.font 'MesloLGS Nerd Font Mono',
+    font_size = 15.0,
     color_scheme = 'ayu',
     check_for_updates = false,
     show_update_window = false,

@@ -1,18 +1,18 @@
 import:
-    - ~/.config/alacritty/themes/ayu-mirage.yml
+    - ~/.config/alacritty/themes/ayu-dark.yaml
 shell:
   args:
     - '-2'
-  program: /usr/bin/tmux
+  program: tmux
 font:
   bold:
-    family: Hack Nerd Font
+    family: MesloLGSDZ Nerd Font Mono
     style: Bold
   italic:
-    family: Hack Nerd Font
+    family: MesloLGSDZ Nerd Font Mono
     style: Italic
   normal:
-    family: Hack Nerd Font
+    family: MesloLGSDZ Nerd Font Mono
     #family: JetBrainsMono Nerd Font Mono
     style: Normal
   size: 15
