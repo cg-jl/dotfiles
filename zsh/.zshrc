@@ -31,6 +31,7 @@ alias ll='ls -lA'
 # syntax highlighting + autosuggestions
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # starship prompt
