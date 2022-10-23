@@ -42,9 +42,6 @@
 [submodule "kitty/.config/kitty/themes/kitty-themes"]
 	path = kitty/.config/kitty/themes/kitty-themes
 	url = git@github.com:dexpota/kitty-themes
-[submodule "kitty/.config/kitty/themes/kitty"]
-	path = kitty/.config/kitty/themes/kitty
-	url = git@github.com:catppuccin/kitty
 [submodule "kitty/.config/kitty/themes/catppuccin"]
 	path = kitty/.config/kitty/themes/catppuccin
 	url = git@github.com:catppuccin/kitty
