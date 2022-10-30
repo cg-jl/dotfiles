@@ -35,6 +35,7 @@ Here's a list of what these dotfiles configure and a list of interesting links
 - `kitty`: [config](./kitty/.config/kitty/kitty.conf) [Submodules]
 - `wezterm`: [config](./wezterm/.config/wezterm/wezterm.lua)
 - `tmux`: [config](./tmux) [Submodules]
+- `bat`: [config](bat/.config/bat). Needs the `bat/.config/catppuccin` submodule. [Submodules]
 - `zsh`: [config](./zsh) [Submodules]
     - [`lsd`](https://github.com/Peltoche/lsd) is set through aliases
     - prompt requires starship.

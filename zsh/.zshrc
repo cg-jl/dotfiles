@@ -22,7 +22,7 @@ alias gst='git status'
 alias gpf='git push --force-with-lease'
 
 # bat theme
-export BAT_THEME=OneHalfDark
+export BAT_THEME="Catppuccin-mocha"
 
 # ls alias
 alias ls='lsd --color=auto'
