@@ -41,7 +41,7 @@ Here's a list of what these dotfiles configure and a list of interesting links
     - prompt requires starship.
 - [`starship`](https://starship.rs/) prompt:
   [config](starship/.config/starship.toml)
-- `neovim` 0.7 stable: [config](./nvim/.config/nvim) [Submodules]
+- `neovim` 0.8 stable: [config](./nvim/.config/nvim) [Submodules]
 
 
 ## Installing
