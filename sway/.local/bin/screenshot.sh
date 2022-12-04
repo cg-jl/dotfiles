@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
-grim -t png -g "$(slurp)" - | wl-copy -t image/png
+/home/gsus/.local/bin/grim -t png -g "$(slurp)" - | /home/gsus/.local/bin/wl-copy -t "image/png"
