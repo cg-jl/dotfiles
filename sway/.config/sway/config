@@ -51,7 +51,7 @@ output * bg /home/gsus/.dotfiles/wallpapers/code-blue-purple.png fill
 # Example configuration:
 input type:keyboard {
     xkb_layout us
-    xkb_variant dvorak
+    xkb_variant dvorak-alt-intl
 }
 
 input type:touchpad {
