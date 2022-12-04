@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator #/home/gsus/.local/bin/wezterm
-set $term  kitty
+set $term kitty
 set $browser firefox
 set $screenshot /home/gsus/.local/bin/screenshot.sh
 # Your preferred application launcher
@@ -251,5 +251,6 @@ client.focused  #9ccfd8   #191724 #e0def4 #68809a #dcdfe4
 #         inactive_workspace #32323200 #32323200 #5c5c5c
 #     }
 # }
+exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 include /etc/sway/config.d/*
