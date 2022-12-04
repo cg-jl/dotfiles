@@ -40,4 +40,4 @@ source <(starship init zsh --print-full-init)
 # opam configuration
 [[ ! -r /home/gsus/.opam/opam-init/init.zsh ]] || source /home/gsus/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-[ -f "/home/gsus/.ghcup/env" ] && source "/home/gsus/.ghcup/env" # ghcup-env
+[ -f "/home/gsus/.ghcup/env" ] && source "/home/gsus/.ghcup/env" || true # ghcup-env
