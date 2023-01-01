@@ -45,3 +45,10 @@ export QSYS_ROOTDIR="/home/gsus/installs/intelFPGA_lite/22.1std/quartus/sopc_bui
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -e /home/gsus/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gsus/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# pnpm
+export PNPM_HOME="/home/gsus/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

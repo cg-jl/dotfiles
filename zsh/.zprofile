@@ -3,6 +3,7 @@
 export TERM=xterm-256color
 source ~/.zshrc
 export XDG_CURRENT_DESKTOP=sway
+export XCURSOR_PATH="${XCURSOR_PATH}:$HOME/.local/share/icons"
 
 
 [[ "$(tty)" == "/dev/tty1" ]] && exec sway

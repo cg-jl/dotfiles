@@ -48,3 +48,9 @@
 [submodule "bat/.config/bat/catppuccin"]
 	path = bat/.config/bat/catppuccin
 	url = git@github.com:catppuccin/bat
+[submodule "emacs/.config/emacs"]
+	path = emacs/.config/emacs
+	url = git@github.com:doomemacs/doomemacs
+[submodule "emacs/.emacs.d"]
+	path = emacs/.emacs.d
+	url = git@github.com:doomemacs/doomemacs
