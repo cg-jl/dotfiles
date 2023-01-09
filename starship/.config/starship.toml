@@ -2,28 +2,11 @@ format = """
 $directory\
 $git_branch\
 $git_status\
-$package\
-$rust$golang$nix_shell\
 $cmd_duration\
+$nix_shell\
 $line_break\
-$jobs\
 $character"""
 
-[directory]
-style = "bold fg:6"
-
-[hostname]
-ssh_only = true
-format = "[$hostname]($style) "
-style = "fg:3"
-
 [git_status]
-format = "[$all_status$ahead_behind ]($style)"
+format = "[$all_status$ahead_behind]($style)"
 style = "bold red"
-
-[package]
-format = '[$symbol$version ]($style)'
-
-[rust]
-format = '[$symbol($version )]($style)'
-
