@@ -39,12 +39,6 @@
 [submodule "zsh/.zsh/zsh-autosuggestions"]
 	path = zsh/.zsh/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions
-[submodule "kitty/.config/kitty/themes/kitty-themes"]
-	path = kitty/.config/kitty/themes/kitty-themes
-	url = git@github.com:dexpota/kitty-themes
-[submodule "kitty/.config/kitty/themes/catppuccin"]
-	path = kitty/.config/kitty/themes/catppuccin
-	url = git@github.com:catppuccin/kitty
 [submodule "bat/.config/bat/catppuccin"]
 	path = bat/.config/bat/catppuccin
 	url = git@github.com:catppuccin/bat
