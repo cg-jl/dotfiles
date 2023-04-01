@@ -5,9 +5,19 @@ add-to-path() {
 	export -U PATH=$1${PATH:+:$PATH}
 }
 
+add-to-ldpath() {
+    export -U LD_LIBRARY_PATH=$1${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+}
+
+add-to-path /opt/bin
+add-to-ldpath /opt/lib
 add-to-path $HOME/.cargo/bin
 add-to-path $HOME/go/bin
 add-to-path $HOME/.local/bin
+
+if command -v "direnv" >/dev/null 2>/dev/null; then
+    eval "$(direnv hook zsh)"
+fi
 
 # set XDG prefixes
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -25,23 +35,24 @@ alias gpf='git push --force-with-lease'
 export BAT_THEME="Catppuccin-mocha"
 
 # ls alias
-alias ls='lsd --color=auto'
+alias ls='ls --color=auto'
 alias ll='ls -lA'
 
+# fpath+=("$HOME/.zsh/pure")
+# autoload -U promptinit
+# promptinit
+# prompt pure
+
 # syntax highlighting + autosuggestions
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # starship prompt
 source <(starship init zsh --print-full-init)
 
 # opam configuration
-[[ ! -r /home/gsus/.opam/opam-init/init.zsh ]] || source /home/gsus/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+if [[ -r /home/gsus/.opam/opam-init/init.zsh ]]; then source /home/gsus/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null; fi
 
-[ -f "/home/gsus/.ghcup/env" ] && source "/home/gsus/.ghcup/env" || true # ghcup-env
+if [ -f "/home/gsus/.ghcup/env" ]; then source "/home/gsus/.ghcup/env"; fi # ghcup-env
 
-export QSYS_ROOTDIR="/home/gsus/installs/intelFPGA_lite/22.1std/quartus/sopc_builder/bin"
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [ -e /home/gsus/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gsus/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
