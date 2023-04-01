@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator #/home/gsus/.local/bin/wezterm
-set $term kitty
+set $term foot
 set $browser firefox
 set $screenshot /home/gsus/.local/bin/screenshot.sh
 # Your preferred application launcher
@@ -221,7 +221,9 @@ for_window [class="__floating"] floating enable
 gaps inner 15
 smart_gaps on
 exec --no-startup-id sh ~/.xsession &
-exec pipewire
+exec dbus-run-session pipewire
+exec dbus-run-session pipewire-pulse
+exec wireplumber
 
 # Let Thinkpad media keys change the volume
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
