@@ -1,6 +1,9 @@
 # cd to directory when written as a command
 setopt autocd
 
+
+typeset -T LD_LIBRARY_PATH ldlibpath
+
 add-to-path() {
 	export -U PATH=$1${PATH:+:$PATH}
 }
@@ -9,11 +12,8 @@ add-to-ldpath() {
     export -U LD_LIBRARY_PATH=$1${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
 }
 
-add-to-path /opt/bin
-add-to-ldpath /opt/lib
-add-to-path $HOME/.cargo/bin
-add-to-path $HOME/go/bin
-add-to-path $HOME/.local/bin
+ldpath+=(/opt/lib /usr/lib)
+path+=(/opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $path)
 
 if command -v "direnv" >/dev/null 2>/dev/null; then
     eval "$(direnv hook zsh)"
