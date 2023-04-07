@@ -42,3 +42,6 @@
 [submodule "bat/.config/bat/catppuccin"]
 	path = bat/.config/bat/catppuccin
 	url = git@github.com:catppuccin/bat
+[submodule "zsh/.zsh/pure"]
+	path = zsh/.zsh/pure
+	url = https://github.com/sindresorhus/pure
