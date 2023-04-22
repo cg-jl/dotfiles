@@ -31,9 +31,6 @@ alias gap='git add --patch'
 alias gst='git status'
 alias gpf='git push --force-with-lease'
 
-# bat theme
-export BAT_THEME="Catppuccin-mocha"
-
 # ls alias
 alias ls='ls --color=auto'
 alias ll='ls -lA'
@@ -44,6 +41,7 @@ pure-prompt() {
     promptinit
     prompt pure
 }
+pure-prompt
 
 # syntax highlighting + autosuggestions
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
@@ -53,7 +51,6 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 starship-prompt() {
     source <(starship init zsh --print-full-init)
 }
-starship-prompt
 
 
 load-nvm() {
