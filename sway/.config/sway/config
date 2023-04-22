@@ -21,7 +21,7 @@ set $screenshot /home/gsus/.local/bin/screenshot.sh
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # FIXME: convert launcher.rasi to gtk css (~/.config/rofi/launcher.rasi)?
-set $menu /home/gsus/.local/bin/wofi --conf NONE -no-lazy-grab --show drun
+set $menu wofi --conf NONE -no-lazy-grab --show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
