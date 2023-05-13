@@ -5,15 +5,12 @@ setopt autocd
 typeset -T LD_LIBRARY_PATH ldlibpath
 
 add-to-path() {
-	export -U PATH=$1${PATH:+:$PATH}
+    path=($1 $path)
 }
 
-add-to-ldpath() {
-    export -U LD_LIBRARY_PATH=$1${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-}
 
 ldpath+=(/opt/lib /usr/lib)
-path+=(/opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $path)
+path=(/opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $path)
 
 if command -v "direnv" >/dev/null 2>/dev/null; then
     eval "$(direnv hook zsh)"
