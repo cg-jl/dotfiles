@@ -1,0 +1,26 @@
+# -*- conf -*-
+# Rose-Piné
+
+[cursor]
+color=faf4ed 575279 
+
+[colors]
+background=faf4ed 
+foreground=575279 
+regular0=f2e9e1 # black
+regular1=b4637a # red
+regular2=286983 # green
+regular3=ea9d34 # yellow
+regular4=56949f # blue
+regular5=907aa9 # magenta
+regular6=d7827e # cyan
+regular7=575279 # white
+
+bright0=9893a5 # bright black
+bright1=b4637a # bright red
+bright2=286983 # bright green
+bright3=ea9d34 # bright yellow
+bright4=56949f # bright blue
+bright5=907aa9 # bright magenta
+bright6=d7827e # bright cyan
+bright7=575279 # bright white
