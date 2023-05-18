@@ -60,6 +60,8 @@ in
 `git@github.com:`, or add an SSH key to your github account. 
 
 - Clone the repo, init `nvim` module and `stow nvim`.
+- Remember to install cachix! [here you can find how to](https://docs.cachix.org/installation)
+- `cachix use nix-community`
 - `sudo nixos-rebuild switch`
 - `home-manager switch --flake <cloned-repo>/nix`.
 - You should be good to go!
