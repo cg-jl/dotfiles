@@ -14,6 +14,56 @@ computer, so I haven't riced it to look good "without any extra window".
 
 ![busy screenshot](screenshots/work.png)
 
+## Using Nix
+
+I'm starting to use `nix` and `home-manager` ta configure my system.
+There's still a couple of parts that I haven't put into VCS, so they're
+documented here:
+
+-  <details><summary> (Nixos Only)Add into `/etc/nixos/configuration.nix`</summary>
+
+```nix
+// { config, pkgs, ... }:
+let home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
+{
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      (import "${home-manager}/nixos")
+      ./cachix.nix
+    ];
+    // ...
+    nix = {
+        gc = {
+            automatic = true;
+            dates = "weekly";
+            options = "--delete-older-than 7d";
+        };
+        package = pkgs.nixUnstable;
+        extraOptions = ''
+            experimental-features = nix-command flakes
+        '';
+        settings.trusted-users = [ "root" "gsus" ];
+    };
+    services.openssh.enable = true;
+    environment.systemPackages = with pkgs; [ 
+        # ensure I can have a minimal setup to debug any mishap!
+        # git is needed to bootstrap
+        git vim firefox
+    ];
+}
+```
+</details>
+- Alternatively, [here](https://nix-community.github.io/home-manager/index.html#sec-install-standalone) you can find how to install home manager for any other linux.
+- If needed, make sure you configure git to use `https://github.com/` instead of
+`git@github.com:`, or add an SSH key to your github account. 
+
+- Clone the repo, init `nvim` module and `stow nvim`.
+- `sudo nixos-rebuild switch`
+- `home-manager switch --flake <cloned-repo>/nix`.
+- You should be good to go!
+
 
 ## Module dependencies
 
