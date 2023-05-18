@@ -110,27 +110,6 @@ bind -r L resize-pane -R 2
     defaultEditor = true;
     vimAlias = true;
     vimdiffAlias = true;
-    plugins = let
-      tresitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
-        p.c
-        p.rust
-        # https://discourse.nixos.org/t/adding-a-new-tree-sitter-parser-to-neovim/23693
-        (pkgs.tree-sitter.buildGrammar {
-          language = "zig";
-          version = "d1df4735c1d7ffc2b38d483347d6eaf7f42e5849";
-          src = pkgs.fetchFromGitHub {
-            owner ="maxxnino";
-            repo = "tree-sitter-zig";
-            rev = "d1df4735c1d7ffc2b38d483347d6eaf7f42e5849";
-            sha256 = "0q0bndnx58pp39v88wpmaacp3qzy8md3hm1r274pa6qfg1yvrx86";
-          };
-        })
-      ]);
-    in with pkgs.vimPlugins;
-    
-    [
-      vim-nix nord-nvim vim-automkdir tresitter
-    ];
   };
   home = {
     username = "gsus";
