@@ -2,11 +2,12 @@
 {pkgs,  ...}: {
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
-  home.packages = [
-    (pkgs.nerdfonts.override {
-      fonts = [ "CodeNewRoman" ];
+  home.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = [ "Iosevka" ];
     })
-    pkgs.wl-clipboard
+    wl-clipboard
+    ripgrep
   ];
   programs.direnv = {
     enable = true;
@@ -104,7 +105,6 @@ bind -r L resize-pane -R 2
 
     '';
   };
-  services.clipman.enable = true;
   programs.neovim = {
     enable = true;
     defaultEditor = true;

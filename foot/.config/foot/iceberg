@@ -1,0 +1,44 @@
+# vim:ft=dosini
+
+[cursor]
+color = 161821 c6c8d1 
+
+[colors]
+foreground = c6c8d1
+background = 161821
+
+# dim black
+regular0 = 1e2132
+# red (bright, from ErrorMsg)
+regular1 = e27878
+# green (bright, from MoreMsg)
+regular2 = b4be82 
+# 'yellow' (from DiffChange)
+regular3 = b3c3cc
+# blue (from Type)
+regular4 = 84a0c6
+# purple (from constant)
+regular5 = a093c7
+# teal (from String)
+regular6 = 89b8c2
+# foreground
+regular7 = c6c8d1
+
+
+# comment
+bright0 = 6b7089
+
+# red (bright, from ErrorMsg)
+bright1 = e27878
+# green (bright, from MoreMsg)
+bright2 = b4be82 
+# 'yellow' (from DiffChange)
+bright3 = b3c3cc
+# blue (from Type)
+bright4 = 84a0c6
+# purple (from constant)
+bright5 = a093c7
+# teal (from String)
+bright6 = 89b8c2
+# foreground
+bright7 = c6c8d1
