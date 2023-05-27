@@ -8,6 +8,7 @@
     })
     wl-clipboard
     ripgrep
+    distcc
   ];
   programs.direnv = {
     enable = true;
@@ -45,6 +46,7 @@
     initExtra = ''
       # git stuff
 export GIT_EDITOR=nvim
+path+=(~/.local/bin)
 
 autoload -U promptinit
 promptinit
