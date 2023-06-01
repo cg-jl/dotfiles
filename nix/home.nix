@@ -9,6 +9,7 @@
     wl-clipboard
     ripgrep
     distcc
+    gh
   ];
   programs.direnv = {
     enable = true;
