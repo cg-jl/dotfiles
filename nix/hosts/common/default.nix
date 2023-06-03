@@ -1,0 +1,80 @@
+{config, lib, pkgs, ...}: {
+  # TODO: inputs: pkgs.nix, graphical.nix
+  imports = [
+    ./pkgs.nix
+    ./graphical.nix
+  ];
+
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+  };
+  
+  users = {
+    defaultUserShell = pkgs.bash;
+    mutableUsers = true;
+    users.root = {
+      home = "/root";
+      uid = config.ids.uids.root;
+      initialHashedPassword = lib.mkForce "$6$EmUv5722kukzf3ae$YDXpWgV5HWOl6bBfmYssBbixyXYNS7W0XKak7lVKwfzWdvUAGf4l4vKt.tn/pqnLGjDKOnST7jV3m7a6OJOFx/";
+    };
+  };
+
+  programs.zsh.enable = true;
+
+  # enable non-free packages
+  nixpkgs.config.allowUnfree = true;
+
+  nix = {
+    # enable nix flakes
+    package = pkgs.nixFlakes;
+
+    settings = {
+      # max jobs for building in parallel
+      max-jobs = "auto";
+      # perform builds in a sandboxed environment
+      sandbox = true;
+
+      # enable flakes
+      experimental-features = [ "nix-command" "flakes" ];
+
+      trusted-users = [ config.users.users.gsus.name or "" ];
+
+
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org"
+      ];
+
+
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+
+    };
+  };
+
+  time.timeZone = "Europe/Madrid";
+
+  i18n.defaultLocale = "en_US.utf8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "es_ES.UTF-8";
+    LC_IDENTIFICATION = "es_ES.UTF-8";
+    LC_MEASUREMENT = "es_ES.UTF-8";
+    LC_MONETARY = "es_ES.UTF-8";
+    LC_NAME = "es_ES.UTF-8";
+    LC_PAPER = "es_ES.UTF-8";
+    LC_TELEPHONE = "es_ES.UTF-8";
+    LC_TIME = "es_ES.UTF-8";
+  };
+
+  console.keyMap = "dvorak";
+
+  networking.networkmanager.enable = true;
+  services.openssh.enable = true;
+
+
+}

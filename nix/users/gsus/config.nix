@@ -1,6 +1,6 @@
 # https://nix-community.github.io/home-manager/options.html
-{pkgs,  ...}: {
-  programs.home-manager.enable = true;
+{pkgs, config,  ...}: {
+  programs.home-manager.enable = builtins.trace config.home.profileDirectory true;
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     (nerdfonts.override {
@@ -10,12 +10,18 @@
     ripgrep
     distcc
     gh
+
+    pavucontrol
+    dconf
+    gnomeExtensions.just-perfection
+    gnomeExtensions.unite
   ];
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
   };
+  programs.firefox.enable = true;
   # todo: gtk.cursortheme
   programs.zsh = {
     enable = true;
@@ -114,10 +120,5 @@ bind -r L resize-pane -R 2
     vimAlias = true;
     vimdiffAlias = true;
   };
-  home = {
-    username = "gsus";
-    homeDirectory = "/home/gsus";
-    # to figure this out, comment this line and see what it expected.
-    stateVersion = "22.11";
-  };
+  imports = [ ./conf ];
 }
