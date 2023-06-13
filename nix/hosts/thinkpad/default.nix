@@ -1,8 +1,8 @@
 {config, modulesPath, pkgs, ...}: {
   imports = [
     ./hardware.nix
-    ../../users/gsus
     ../common
+    ../../users/gsus
   ];
 
   nix.settings.build-cores = 16;

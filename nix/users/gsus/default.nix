@@ -1,6 +1,8 @@
 {config,pkgs,...}: {
   imports = [ ];
 
+  programs.zsh.enable = true;
+
   users.users.gsus = {
     isNormalUser = true;
     description = "Jesús (gsus) Lapastora";
@@ -14,10 +16,5 @@
   home-manager.users.gsus = {
     imports = [ ./config.nix ];
 
-    home = {
-      inherit (config.system) stateVersion;
-      username = "gsus";
-      homeDirectory = "/home/gsus";
-    };
   };
 }

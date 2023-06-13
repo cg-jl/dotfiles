@@ -2,6 +2,9 @@
 {pkgs, config,  ...}: {
   programs.home-manager.enable = builtins.trace config.home.profileDirectory true;
   fonts.fontconfig.enable = true;
+  home.stateVersion = "23.05";
+  home.username = "gsus";
+  home.homeDirectory = "/home/gsus";
   home.packages = with pkgs; [
     (nerdfonts.override {
       fonts = [ "Iosevka" ];

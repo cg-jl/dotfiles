@@ -1,8 +1,9 @@
 {pkgs, ...}: {
-  imports = [ ];
+  # essentials to boot & maintain the system
   environment.systemPackages = with pkgs; [
     git
-    cachix
+    cachix 
     home-manager
+    efibootmgr
   ];
 }

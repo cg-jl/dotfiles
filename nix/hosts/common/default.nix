@@ -1,12 +1,14 @@
 {config, lib, pkgs, ...}: {
-  # TODO: inputs: pkgs.nix, graphical.nix
   imports = [
     ./pkgs.nix
     ./graphical.nix
   ];
 
+  powerManagement.enable = true;
+
+
   boot.loader = {
-    systemd-boot.enable = true;
+    systemd-boot.enable = builtins.trace "systemd-boot.enable queried" true;
     efi = {
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot/efi";
@@ -22,8 +24,6 @@
       initialHashedPassword = lib.mkForce "$6$EmUv5722kukzf3ae$YDXpWgV5HWOl6bBfmYssBbixyXYNS7W0XKak7lVKwfzWdvUAGf4l4vKt.tn/pqnLGjDKOnST7jV3m7a6OJOFx/";
     };
   };
-
-  programs.zsh.enable = true;
 
   # enable non-free packages
   nixpkgs.config.allowUnfree = true;
@@ -41,7 +41,7 @@
       # enable flakes
       experimental-features = [ "nix-command" "flakes" ];
 
-      trusted-users = [ config.users.users.gsus.name or "" ];
+      trusted-users = [ "root" config.users.users.gsus.name or "" ];
 
 
       substituters = [
