@@ -10,6 +10,13 @@
       source = ../../../zls/.config/zls.json;
       target = "./.config/zls.json";
     };
+    "cursor-theme" = {
+      text = ''
+        [icon theme]
+        Inherits=Breeze_Snow
+        '';
+        target = "./.icons/default/index.theme";
+    };
   };
   home.packages = with pkgs;
   let custom-fonts = stdenv.mkDerivation {
@@ -43,6 +50,24 @@
     nix-direnv.enable = true;
   };
   programs.firefox.enable = true;
+  home.pointerCursor = {
+    package = with pkgs; stdenv.mkDerivation {
+    name = "Breeze Snow";
+    src = fetchzip {
+      url = "https://code.jpope.org/jpope/breeze_cursor_sources/raw/master/breeze-snow-cursor-theme.zip";
+      sha256 = "h1XekN082CJl83eBEr38PzNZpYYBmmmxmrZGG5E7K0o=";
+    };
+    phases = [ "installPhase" ];
+    installPhase = ''
+      ls $src
+      install -d $out/share/icons/Breeze_Snow
+      cp -rf $src/* $out/share/icons/Breeze_Snow
+      '';
+  };
+    x11.enable = true;
+    gtk.enable = true;
+    name = "Breeze_Snow";
+  };
   # todo: gtk.cursortheme
   programs.zsh = {
     enable = true;
