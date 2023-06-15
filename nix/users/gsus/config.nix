@@ -5,6 +5,12 @@
   home.stateVersion = "23.05";
   home.username = "gsus";
   home.homeDirectory = "/home/gsus";
+  home.file = {
+    "zls-config" = {
+      source = ../../../zls/.config/zls.json;
+      target = "./.config/zls.json";
+    };
+  };
   home.packages = with pkgs;
   let custom-fonts = stdenv.mkDerivation {
     name = "Custom Fonts";
