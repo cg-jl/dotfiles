@@ -5,7 +5,18 @@
   home.stateVersion = "23.05";
   home.username = "gsus";
   home.homeDirectory = "/home/gsus";
-  home.packages = with pkgs; [
+  home.packages = with pkgs;
+  let custom-fonts = stdenv.mkDerivation {
+    name = "Custom Fonts";
+    src = ../../../fonts;
+    phases = [ "installPhase"];
+    installPhase = ''
+      mkdir -p $out/share/fonts/truetype
+      find $src -name '*.ttf' -exec mv {} $out/share/fonts/truetype/ \;
+      '';
+
+  };
+  in [
     (nerdfonts.override {
       fonts = [ "Iosevka" ];
     })
@@ -14,6 +25,7 @@
     distcc
     gh
 
+    custom-fonts
     pavucontrol
     dconf
     gnomeExtensions.just-perfection
@@ -68,8 +80,13 @@ bindkey '^f' autosuggest-accept
   };
   programs.foot = {
     enable = true;
-    # do not write anything to foot.ini since I already hove 
-    # a configuration there. Why the need to reinvent everything?
+    settings = {
+      main = {
+        shell = "tmux -2";
+        font = "MonoLisa:size=8:fontfeatures=ss04,zero,liga=0";
+        include = "${../../../foot/.config/foot/iceberg}";
+      };
+    };
   };
   programs.tmux = {
     enable = true;
