@@ -3,6 +3,9 @@
 
   programs.zsh.enable = true;
 
+  # enable completion for system packages in zsh.
+  environment.pathsToLink = [ "/share/zsh" ];
+
   users.users.gsus = {
     isNormalUser = true;
     description = "Jesús (gsus) Lapastora";
