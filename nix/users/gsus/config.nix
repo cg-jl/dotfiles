@@ -114,7 +114,8 @@ bindkey '^f' autosuggest-accept
     settings = {
       main = {
         shell = "tmux -2";
-        font = "MonoLisa:size=8:fontfeatures=ss04,zero,liga=0";
+        #font = "Rec Mono Duotone:size=10:fontfeatures=ss04,zero,liga=0";
+        font = "Cartograph CF:size=8";
         include = "${../../../foot/.config/foot/iceberg}";
       };
     };
