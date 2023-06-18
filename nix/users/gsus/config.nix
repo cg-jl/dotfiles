@@ -39,11 +39,13 @@
     gh
 
     custom-fonts
+    man-pages
     pavucontrol
     dconf
     gnomeExtensions.just-perfection
     gnomeExtensions.unite
   ];
+  programs.htop.enable = true;
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
