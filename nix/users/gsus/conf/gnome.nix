@@ -26,7 +26,7 @@
       };
       "org/gnome/shell/extensions/user-theme".name = "Catppuccin-Mocha";
       "org/gnome/desktop/interface-gtk/theme".name = "Catppuccin-Mocha";
-      "org/gnome/desktop/wm/keybindngs" = {
+      "org/gnome/desktop/wm/keybindings" = {
         close = [ "<Super>w"];
       };
   };
