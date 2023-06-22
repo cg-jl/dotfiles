@@ -20,7 +20,7 @@
   home.packages = with pkgs;
   let custom-fonts = stdenv.mkDerivation {
     name = "Custom Fonts";
-    src = ../../../fonts;
+    src = ../../../fonts/patched;
     phases = [ "installPhase"];
     installPhase = ''
       mkdir -p $out/share/fonts/truetype
@@ -29,6 +29,8 @@
 
   };
   in [
+
+    pkgs.nur.repos.sanctureplicum.rec-mono-nyx
     (nerdfonts.override {
       fonts = [ "Iosevka" ];
     })
@@ -62,6 +64,18 @@
     x11.enable = true;
     gtk.enable = true;
     name = "Breeze_Snow";
+  };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Catppucin-Macchiato-Compact-Pink-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "pink" ];
+        size = "compact";
+        tweaks = [ "rimless" ];
+        variant = "macchiato";
+      };
+    };
   };
   # todo: gtk.cursortheme
   imports = [ ./conf ./programs.nix ];

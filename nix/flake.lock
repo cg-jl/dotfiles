@@ -36,10 +36,61 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1683475240,
+        "narHash": "sha256-sy6MYoCaIZsOenYplbzVXI4Ce9Bp/vIOpuFa97+a6wc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e040aab15638aaf8d0786894851a2b1ca09a7baf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nur": {
+      "locked": {
+        "lastModified": 1687291945,
+        "narHash": "sha256-wurtV8cWN5nkmnP6YvN/kjvb70Umm3Ska346Epf780I=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "1899d2c346f8b87a7ef57b6f59e02924b96ceeba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nur": "nur",
+        "sanctureplicum-nur": "sanctureplicum-nur"
+      }
+    },
+    "sanctureplicum-nur": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1686890354,
+        "narHash": "sha256-a8Yxu4ApSk6fhfRoHvnWhUJuOG/A7BVASczKtdXMzf0=",
+        "ref": "refs/heads/main",
+        "rev": "72e258ac341e9e91314a2738b7577273354a386b",
+        "revCount": 24,
+        "type": "git",
+        "url": "https://gitea.pid1.sh/sanctureplicum/nur.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gitea.pid1.sh/sanctureplicum/nur.git"
       }
     }
   },

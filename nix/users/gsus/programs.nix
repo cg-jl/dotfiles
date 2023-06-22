@@ -19,7 +19,7 @@
       autocd = true;
       shellAliases = {
         ls = "ls --color=auto";
-        ll = "ls -lA";
+        ll = "ls -l";
         gap = "git add --patch";
         gst = "git status";
         gpf = "git push --force-with-lease";
@@ -53,7 +53,8 @@
         main = {
           shell = "tmux -2";
           #font = "Rec Mono Duotone:size=10:fontfeatures=ss04,zero,liga=0";
-          font = "Cartograph CF:size=8";
+          font = "Rec Mono Nyx";
+          #font = "Cartograph CF:size=8";
           include = "${../../../foot/.config/foot/iceberg}";
         };
       };
