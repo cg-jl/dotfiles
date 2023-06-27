@@ -39,6 +39,7 @@
     distcc
     gh
 
+    libqalculate
     nixfmt
     custom-fonts
     man-pages

@@ -4,6 +4,7 @@
 # dconf2nix: https://github.com/gvolpe/dconf2nix
 { config, lib, osConfig, ...}: {
   config = lib.mkIf osConfig.graphical {
+    xdg.dataFile.backgrounds.source = ../../../../wallpapers;
     dconf.settings = {
       # xdg.dataFile.backgrounds.source = ../wallpapers;
       # TODO: wallpapers
@@ -18,6 +19,11 @@
           "unite@hardpixel.eu"
         ];
         favorite-apps = [ "org.codeberg.dnkl.foot.desktop" "firefox.desktop" ];
+      };
+      "org/gnome/desktop/background" = {
+        color-shading-type = "solid";
+        picture-options = "zoom";
+        picture-uri = "file://${config.xdg.dataHome}/backgrounds/asturias.jpg";
       };
       "org/gnome/shell/extensions/unite".hide-window-titlebars = "always";
       "org/gnome/shell/extensions/just-perfection" = {

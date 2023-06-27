@@ -19,7 +19,7 @@
       autocd = true;
       shellAliases = {
         ls = "ls --color=auto";
-        ll = "ls -l";
+        ll = "ls -lh";
         gap = "git add --patch";
         gst = "git status";
         gpf = "git push --force-with-lease";
@@ -57,6 +57,7 @@
           #font = "Cartograph CF:size=8";
           include = "${../../../foot/.config/foot/iceberg}";
         };
+        colors.alpha = "0.9";
       };
     };
     tmux = {
