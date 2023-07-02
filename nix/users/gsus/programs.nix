@@ -16,16 +16,15 @@
         main = {
           shell = "tmux -2";
           font = "Rec Mono Nyx";
-          include = "${../../../foot/.config/foot/iceberg-light}";
-          # let  ctp-foot = pkgs.fetchFromGitHub {
-            #   owner = "catppuccin";
-            #   repo = "foot";
-            #   rev = "master";
-            #   sha256 = "gO+ZfG2Btehp8uG+h4JE7MSFsic+Qvfzio8Um0lDGTg=";
-            # };
-          # in "${ctp-foot}/catppuccin-latte.conf";
+          include = let
+            ctp-foot = pkgs.fetchFromGitHub {
+              owner = "catppuccin";
+              repo = "foot";
+              rev = "master";
+              sha256 = "gO+ZfG2Btehp8uG+h4JE7MSFsic+Qvfzio8Um0lDGTg=";
+            };
+          in "${ctp-foot}/catppuccin-latte.conf";
         };
-        colors.alpha = "0.9";
       };
     };
     tmux = {
@@ -35,6 +34,12 @@
       #    keyMode = "vi";
       prefix = "m-b";
       sensibleOnTop = false;
+      plugins = [{
+        plugin = pkgs.tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavour 'latte'
+        '';
+      }];
       mouse = true;
       clock24 = true; # use 24-h clock.
       extraConfig = ''

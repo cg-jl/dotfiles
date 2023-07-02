@@ -6,7 +6,7 @@ color = e8e9ec 33374c
 
 [colors]
 foreground = 33374c
-background = e8e9ec
+background = ffffff
 
 # white
 regular0 = dcdfe7
