@@ -23,7 +23,7 @@
               rev = "master";
               sha256 = "gO+ZfG2Btehp8uG+h4JE7MSFsic+Qvfzio8Um0lDGTg=";
             };
-          in "${ctp-foot}/catppuccin-latte.conf";
+          in "${ctp-foot}/catppuccin-mocha.conf";
         };
       };
     };
@@ -37,7 +37,7 @@
       plugins = [{
         plugin = pkgs.tmuxPlugins.catppuccin;
         extraConfig = ''
-          set -g @catppuccin_flavour 'latte'
+          set -g @catppuccin_flavour 'mocha'
         '';
       }];
       mouse = true;
