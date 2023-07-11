@@ -13,6 +13,8 @@
       gap = "git add --patch";
       gst = "git status";
       gpf = "git push --force-with-lease";
+      gca = "git commit --amend";
+      gcan = "git commit --amend --no-edit";
     };
     plugins = [{
       name = "pure";
