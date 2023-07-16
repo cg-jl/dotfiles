@@ -38,6 +38,10 @@
     ripgrep
     distcc
     gh
+    jq
+    unzip
+    file
+
 
     libqalculate
     nixfmt

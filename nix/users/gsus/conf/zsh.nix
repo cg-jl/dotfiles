@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.zsh = {
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     # don't forget to add 
     # environment.pathsToLink = [ "/share/zsh" ]
     # to system configuration to get completion for system packages
