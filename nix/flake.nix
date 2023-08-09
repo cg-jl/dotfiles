@@ -9,10 +9,11 @@
     sanctureplicum-nur.url = "git+https://gitea.pid1.sh/sanctureplicum/nur.git";
     zig.url = "github:mitchellh/zig-overlay";
     zls.url = "github:zigtools/zls";
+    rust-overlay.url = "github:oxalica/rust-overlay";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = { nixpkgs, home-manager, nur, sanctureplicum-nur, zig, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, sanctureplicum-nur, zig, rust-overlay, ... }@inputs:
     let
       overlays = final: prev: {
         nur = import nur {
@@ -29,7 +30,7 @@
       nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ({ config, ... }: { config = {  nixpkgs.overlays = [ overlays ]; }; })
+          ({ config, ... }: { config = {  nixpkgs.overlays = [ overlays (import rust-overlay) ]; }; })
 
           home-manager.nixosModules.home-manager
           {

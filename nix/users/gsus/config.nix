@@ -28,9 +28,12 @@
       '';
 
   };
-  in [
-
-    pkgs.nur.repos.sanctureplicum.rec-mono-nyx
+  rust = 
+    rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
+  in builtins.trace (builtins.attrNames rust) [
+    nur.repos.sanctureplicum.rec-mono-nyx
+    rust
+    gcc
     zls
     zigpkgs."0.11.0"
     (nerdfonts.override {
