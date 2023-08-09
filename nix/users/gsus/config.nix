@@ -28,11 +28,15 @@
       '';
 
   };
+  odin = import ./programs/odin.nix { inherit pkgs;};
   rust = 
     rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
-  in builtins.trace (builtins.attrNames rust) [
+  in [
     nur.repos.sanctureplicum.rec-mono-nyx
+    odin
+    imv
     rust
+    rust-analyzer
     gcc
     zls
     zigpkgs."0.11.0"

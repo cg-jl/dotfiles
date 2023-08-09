@@ -16,14 +16,7 @@
         main = {
           shell = "tmux -2";
           font = "Rec Mono Nyx";
-          include = let
-            ctp-foot = pkgs.fetchFromGitHub {
-              owner = "catppuccin";
-              repo = "foot";
-              rev = "master";
-              sha256 = "gO+ZfG2Btehp8uG+h4JE7MSFsic+Qvfzio8Um0lDGTg=";
-            };
-          in "${ctp-foot}/catppuccin-mocha.conf";
+    #      include = "${../../../foot/themes/oxocarbon}";
         };
       };
     };

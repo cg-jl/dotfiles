@@ -1,0 +1,21 @@
+# vim:ft=dosini
+# extracted from https://github.com/nyoom-engineering/base16-oxocarbon/blob/main/base16-oxocarbon-dark.yaml
+[colors]
+foreground=ffffff # regular6
+background=161616 # regular0
+; regular0=161616 
+; regular1=262626 
+; regular2=393939 
+; regular3=525252 
+; regular4=dde1e6 
+; regular5=f2f4f8 
+; regular6=ffffff 
+; regular7=08bdba
+; bright0=3ddbd9 
+; bright1=78a9ff 
+; bright2=ee5396 
+; bright3=33b1ff 
+; bright4=ff7eb6 
+; bright5=42be65 
+; bright6=be95ff 
+; bright7=82cfff
