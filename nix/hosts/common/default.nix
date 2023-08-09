@@ -11,7 +11,7 @@
     systemd-boot.enable = builtins.trace "systemd-boot.enable queried" true;
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
+      efiSysMountPoint = "/boot";
     };
   };
   
