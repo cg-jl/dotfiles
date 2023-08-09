@@ -7,10 +7,11 @@
     };
     nur.url = "github:nix-community/NUR";
     sanctureplicum-nur.url = "git+https://gitea.pid1.sh/sanctureplicum/nur.git";
+    zig.url = "github:mitchellh/zig-overlay";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = { nixpkgs, home-manager, nur, sanctureplicum-nur, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, sanctureplicum-nur, zig, ... }@inputs:
     let
       overlays = final: prev: {
         nur = import nur {
@@ -20,6 +21,7 @@
             sanctureplicum = import sanctureplicum-nur { pkgs = prev; };
           };
         };
+        zigpkgs = zig.packages.${prev.system};
       };
     in {
       nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {

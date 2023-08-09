@@ -31,6 +31,7 @@
   in [
 
     pkgs.nur.repos.sanctureplicum.rec-mono-nyx
+    zigpkgs."0.11.0"
     (nerdfonts.override {
       fonts = [ "Iosevka" ];
     })
