@@ -8,6 +8,7 @@
     nur.url = "github:nix-community/NUR";
     sanctureplicum-nur.url = "git+https://gitea.pid1.sh/sanctureplicum/nur.git";
     zig.url = "github:mitchellh/zig-overlay";
+    zls.url = "github:zigtools/zls";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   };
 
@@ -22,6 +23,7 @@
           };
         };
         zigpkgs = zig.packages.${prev.system};
+        zls = inputs.zls.packages.${prev.system}.zls;
       };
     in {
       nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
