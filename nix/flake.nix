@@ -41,12 +41,23 @@
             ocaml merlin utop base ppx_jane ocamlformat
           ]);})
 
-          home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager (
+          {config, lib, ...}:
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "~";
-          }
+            options.sourceBuilds.cpu = lib.mkOption {
+              type = lib.types.str;
+              default = "baseline";
+              description = "-Dcpu to use when building Zig software from source.";
+            };
+            config = {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "~";
+              home-manager.extraSpecialArgs = { 
+                inherit (config.sourceBuilds) cpu;
+              };
+            };
+          })
 
         ];
       };

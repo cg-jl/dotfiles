@@ -27,6 +27,9 @@
     [ { device = "/dev/disk/by-uuid/044512f4-3752-43bd-9088-16d4b053bd2a"; }
     ];
 
+  # Set the CPU to use when available to modules that compile software from source.
+  sourceBuilds.cpu = "znver3";
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction

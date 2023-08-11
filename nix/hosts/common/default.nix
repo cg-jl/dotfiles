@@ -4,11 +4,6 @@
     ./graphical.nix
   ];
 
-  options.cpu = lib.mkOption {
-    type = lib.types.string;
-    default = "baseline";
-  };
-
   config = {
 
     powerManagement.enable = true;
