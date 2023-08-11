@@ -30,7 +30,16 @@
       nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./hosts/thinkpad
+
           ({ config, ... }: { config = {  nixpkgs.overlays = [ overlays (import rust-overlay) ]; }; })
+
+          # ocaml
+          ({pkgs, ...}: { environment.systemPackages = with pkgs; [
+            dune_3
+          ] ++ (with ocamlPackages; [
+            ocaml merlin utop base ppx_jane ocamlformat
+          ]);})
 
           home-manager.nixosModules.home-manager
           {
@@ -39,7 +48,6 @@
             home-manager.backupFileExtension = "~";
           }
 
-          ./hosts/thinkpad
         ];
       };
     };

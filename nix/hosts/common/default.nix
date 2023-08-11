@@ -1,29 +1,36 @@
-{config, lib, pkgs, ...}: {
+{config, lib, pkgs, options, ...}: {
   imports = [
     ./pkgs.nix
     ./graphical.nix
   ];
 
-  powerManagement.enable = true;
+  options.cpu = lib.mkOption {
+    type = lib.types.string;
+    default = "baseline";
+  };
+
+  config = {
+
+    powerManagement.enable = true;
 
 
-  boot.loader = {
-    systemd-boot.enable = builtins.trace "systemd-boot.enable queried" true;
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
+    boot.loader = {
+      systemd-boot.enable = builtins.trace "systemd-boot.enable queried" true;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
     };
-  };
-  
-  users = {
-    defaultUserShell = pkgs.bash;
-    mutableUsers = true;
-    users.root = {
-      home = "/root";
-      uid = config.ids.uids.root;
-      initialHashedPassword = lib.mkForce "$6$EmUv5722kukzf3ae$YDXpWgV5HWOl6bBfmYssBbixyXYNS7W0XKak7lVKwfzWdvUAGf4l4vKt.tn/pqnLGjDKOnST7jV3m7a6OJOFx/";
+
+    users = {
+      defaultUserShell = pkgs.bash;
+      mutableUsers = true;
+      users.root = {
+        home = "/root";
+        uid = config.ids.uids.root;
+        initialHashedPassword = lib.mkForce "$6$EmUv5722kukzf3ae$YDXpWgV5HWOl6bBfmYssBbixyXYNS7W0XKak7lVKwfzWdvUAGf4l4vKt.tn/pqnLGjDKOnST7jV3m7a6OJOFx/";
+      };
     };
-  };
 
   # enable non-free packages
   nixpkgs.config.allowUnfree = true;
@@ -47,12 +54,15 @@
       substituters = [
         "https://nix-community.cachix.org"
         "https://cache.nixos.org"
+        "https://cache.iog.io"
       ];
 
 
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
       ];
+
 
     };
   };
@@ -75,6 +85,7 @@
 
   networking.networkmanager.enable = true;
   services.openssh.enable = true;
+};
 
 
 }

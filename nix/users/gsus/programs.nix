@@ -8,14 +8,21 @@
       nix-direnv.enable = true;
     };
     firefox.enable = true;
-    zsh.enable = true;
+    zsh = { 
+      enable = true;
+      initExtra = ''
+      path+=($HOME/.cargo/bin)
+      '';
+    };
     # TODO: make something that breaks when font isn't installed?
     foot = {
+      package = pkgs.foot; # override with nixpkgs-unstable
       enable = true;
       settings = {
         main = {
           shell = "tmux -2";
-          font = "Rec Mono Nyx";
+          font = "Rec Mono Nyx:size=12";
+          include = "${pkgs.foot.themes}/share/foot/themes/solarized-light";
     #      include = "${../../../foot/themes/oxocarbon}";
         };
       };
@@ -27,12 +34,7 @@
       #    keyMode = "vi";
       prefix = "m-b";
       sensibleOnTop = false;
-      plugins = [{
-        plugin = pkgs.tmuxPlugins.catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_flavour 'mocha'
-        '';
-      }];
+      plugins = [];
       mouse = true;
       clock24 = true; # use 24-h clock.
       extraConfig = ''

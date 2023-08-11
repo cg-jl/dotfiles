@@ -10,6 +10,8 @@
   # ];
     
 
+  cpu = "znver3";
+
   # boot.kernelPackages = pkgs.linuxR7;
   boot.supportedFilesystems = [ "ntfs" ];
 
