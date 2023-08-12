@@ -22,8 +22,8 @@
         main = {
           shell = "tmux -2";
           font = "Rec Mono Nyx:size=12";
-          include = "${pkgs.foot.themes}/share/foot/themes/solarized-light";
-    #      include = "${../../../foot/themes/oxocarbon}";
+         # include = "${pkgs.foot.themes}/share/foot/themes/solarized-light";
+          include = "${../../../foot/themes/rose-pine-dawn}";
         };
       };
     };
