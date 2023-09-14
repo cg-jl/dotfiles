@@ -9,13 +9,15 @@
     sanctureplicum-nur.url = "git+https://gitea.pid1.sh/sanctureplicum/nur.git";
     zig.url = "github:mitchellh/zig-overlay";
     zls.url = "github:zigtools/zls";
-    rust-overlay.url = "github:oxalica/rust-overlay";
+#    rust-overlay.url = "github:oxalica/rust-overlay";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
   };
 
-  outputs = { nixpkgs, home-manager, nur, sanctureplicum-nur, zig, rust-overlay, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, sanctureplicum-nur, zig, nix-doom-emacs,  ... }@inputs:
     let
       overlays = final: prev: {
+        nix-doom-emacs = nix-doom-emacs.packages.${prev.system};
         nur = import nur {
           nurpkgs = prev;
           pkgs = prev;
@@ -23,6 +25,15 @@
             sanctureplicum = import sanctureplicum-nur { pkgs = prev; };
           };
         };
+        jetbrains = prev.jetbrains // { clion = prev.jetbrains.clion.overrideAttrs (oldAttrs: rec {
+          inherit (oldAttrs) nativeBuildInputs buildInputs dontAutoPatchelf postFixup;
+          version = "2023.2.1";
+          src = prev.fetchurl {
+            url = "https://download.jetbrains.com/cpp/CLion-${version}.tar.gz";
+            hash = "sha256-Pa1YDy1LQIFcZNpgLjfYdL7wO99QvXDOY++0AFAGzxk=";
+          };
+
+        }); };
         zigpkgs = zig.packages.${prev.system};
         zls = inputs.zls.packages.${prev.system}.zls;
       };
@@ -32,13 +43,13 @@
         modules = [
           ./hosts/thinkpad
 
-          ({ config, ... }: { config = {  nixpkgs.overlays = [ overlays (import rust-overlay) ]; }; })
+          ({ config, ... }: { config = {  nixpkgs.overlays = [ overlays ]; }; })
 
           # ocaml
           ({pkgs, ...}: { environment.systemPackages = with pkgs; [
             dune_3
           ] ++ (with ocamlPackages; [
-            ocaml merlin utop base ppx_jane ocamlformat
+            ocaml merlin utop base ppx_jane ocamlformat ocaml-lsp
           ]);})
 
           home-manager.nixosModules.home-manager (

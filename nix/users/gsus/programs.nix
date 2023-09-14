@@ -11,9 +11,19 @@
     zsh = { 
       enable = true;
       initExtra = ''
-      path+=($HOME/.cargo/bin)
+      path+=($HOME/.cargo/bin $HOME/.local/bin)
+
+      # opam
+    [[ ! -r /home/gsus/.opam/opam-init/init.zsh ]] || source /home/gsus/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
       '';
     };
+
+    # use vscode for Jakt
+    # TODO: configure extensions (tokyo night)
+    vscode.enable = true;
+    # track time
+    watson.enable = true;
+
     # TODO: make something that breaks when font isn't installed?
     foot = {
       package = pkgs.foot; # override with nixpkgs-unstable
@@ -22,8 +32,8 @@
         main = {
           shell = "tmux -2";
           font = "Rec Mono Nyx:size=12";
-         # include = "${pkgs.foot.themes}/share/foot/themes/solarized-light";
-          include = "${../../../foot/themes/rose-pine-dawn}";
+          include = "${pkgs.foot.themes}/share/foot/themes/tokyonight-night";
+          # include = "${../../../foot/themes/github-dark-high-contrast}";
         };
       };
     };
@@ -74,6 +84,7 @@
 
       '';
     };
+
     # TODO: use pinned version of neovim
     neovim = {
       enable = true;

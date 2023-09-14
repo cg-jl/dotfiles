@@ -29,23 +29,43 @@
 
   };
   odin = import ./programs/odin.nix { inherit pkgs;};
+  ols = import ./programs/ols.nix { inherit pkgs odin; };
   poop = import ./programs/poop.nix { inherit cpu zigpkgs pkgs; };
-  rust = 
-  rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
+  doom-emacs = nix-doom-emacs.override {
+    doomPrivateDir = ./doom.d;
+  };
+  # rust = 
+  # rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
   in [
     nur.repos.sanctureplicum.rec-mono-nyx
+    doom-emacs
+
+    telegram-desktop
+    jetbrains.clion
+    jetbrains.idea-ultimate
+    perf-tools
+    linuxPackages_latest.perf
+
+
+    go
+    gopls
+    nodejs
 
 
     man-pages
+    binutils # addr2line
+    gcc
     clang-tools
+    lldb
     meson
     ninja
     odin
+    ols
     imv
     poop
-    rust
-    rust-analyzer
-    gcc
+    rustup
+    cmake
+    gdb
     zls
     zigpkgs.master
     (nerdfonts.override {

@@ -14,6 +14,6 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   nix.settings.build-cores = 16;
-  networking.hostName = "jesus-thinkpad";
+  networking.hostName = "thinkpad";
   system.stateVersion = "23.05";
 }
