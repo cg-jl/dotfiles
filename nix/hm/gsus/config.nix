@@ -1,5 +1,5 @@
 # https://nix-community.github.io/home-manager/options.html
-{pkgs, config, options, lib, cpu,  ...}: {
+{pkgs, config, cpu,  ...}: {
   fonts.fontconfig.enable = true;
   home.stateVersion = "23.05";
   home.username = "gsus";
@@ -30,15 +30,12 @@
   };
   odin = import ./programs/odin.nix { inherit pkgs;};
   ols = import ./programs/ols.nix { inherit pkgs odin; };
-  poop = import ./programs/poop.nix { inherit cpu zigpkgs pkgs; };
-  doom-emacs = nix-doom-emacs.override {
-    doomPrivateDir = ./doom.d;
-  };
+  poop = import ./programs/poop.nix { inherit zigpkgs pkgs cpu;  };
   # rust = 
   # rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
   in [
     nur.repos.sanctureplicum.rec-mono-nyx
-    doom-emacs
+    dconf # required for gtk
 
     telegram-desktop
     jetbrains.clion

@@ -1,6 +1,4 @@
 {config,pkgs,...}: {
-  imports = [ ];
-
   programs.zsh.enable = true;
 
   # enable completion for system packages in zsh.
@@ -13,11 +11,5 @@
     extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.zsh;
     packages = [ pkgs.zsh ];
-  };
-
-
-  home-manager.users.gsus = {
-    imports = [ ./config.nix ];
-
   };
 }

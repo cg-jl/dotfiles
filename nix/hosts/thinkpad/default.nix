@@ -2,7 +2,6 @@
   imports = [
     ./hardware.nix
     ../common
-    ../../users/gsus
   ];
 
   # nixpkgs.overlays = [
