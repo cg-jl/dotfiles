@@ -37,6 +37,8 @@
     nur.repos.sanctureplicum.rec-mono-nyx
     dconf # required for gtk
 
+    parallel
+
     telegram-desktop
     jetbrains.clion
     jetbrains.idea-ultimate
