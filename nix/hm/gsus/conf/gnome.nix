@@ -2,8 +2,8 @@
 # https://gitea.pid1.sh/sanctureplicum/config/src/branch/main/users/carsten/conf/gnome.nix
 # NOTE: if making any changes to the config, use the gui and then
 # dconf2nix: https://github.com/gvolpe/dconf2nix
-{ config, lib, osConfig, ...}: {
-  config = lib.mkIf osConfig.graphical {
+{ config, lib, ...}@inputs: {
+  config = lib.mkIf (inputs.osConfig or {graphical = true;}).graphical {
     xdg.dataFile.backgrounds.source = ../../../../wallpapers;
     dconf.settings = {
       # xdg.dataFile.backgrounds.source = ../wallpapers;

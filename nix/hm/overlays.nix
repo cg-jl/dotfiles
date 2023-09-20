@@ -11,7 +11,9 @@
     zls.url = "github:zigtools/zls";
   };
 
-  mkConf = {nur, sanctureplicum, zig, zls, ...}: { nixpkgs.overlays = [ (final: prev: {
+  mkConf = {nur, sanctureplicum, zig, zls, ...}: { 
+    nixpkgs.config.allowUnfree = true;
+    nixpkgs.overlays = [ (final: prev: {
       nur = import nur {
         nurpkgs = prev;
         pkgs = prev;
@@ -21,7 +23,7 @@
       };
       jetbrains = prev.jetbrains // { clion = prev.jetbrains.clion.overrideAttrs (oldAttrs: rec {
         inherit (oldAttrs) nativeBuildInputs buildInputs dontAutoPatchelf postFixup;
-        version = "2023.2.1";
+        version = builtins.trace "yo overlays are called" "2023.2.1";
         src = prev.fetchurl {
           url = "https://download.jetbrains.com/cpp/CLion-${version}.tar.gz";
           hash = "sha256-Pa1YDy1LQIFcZNpgLjfYdL7wO99QvXDOY++0AFAGzxk=";
@@ -31,5 +33,5 @@
       zigpkgs = zig.packages.${prev.system};
       zls = zls.packages.${prev.system}.zls;
     })
-    ]; };
+  ]; };
 }

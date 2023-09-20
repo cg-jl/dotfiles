@@ -15,6 +15,18 @@
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
     {
+
+      homeConfigurations."gsus" =
+        let pkgs = nixpkgs.legacyPackages.x86_64-linux; in 
+        home-manager.lib.homeManagerConfiguration ({
+         modules = [
+           { nixpkgs.config.allowUnfree = true; }
+           (_: ((import ./hm/overlays.nix).mkConf inputs))
+           (inp: (import ./hm) false inp)
+          ]; 
+          inherit pkgs;
+       } );
+
       nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -30,7 +42,7 @@
             ocaml merlin utop base ppx_jane ocamlformat ocaml-lsp
           ]);})
 
-          home-manager.nixosModules.home-manager (import ./hm)
+          home-manager.nixosModules.home-manager (import ./hm true)
 
         ];
       };
