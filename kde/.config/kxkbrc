@@ -3,7 +3,7 @@ update_info=kxkb.upd:remove-empty-lists,kxkb.upd:add-back-resetoptions,kxkb_vari
 
 [Layout]
 LayoutList=us
-Options=grp:alt_space_toggle,caps:escape_shifted_capslock
+Options=grp:alt_space_toggle
 ResetOldOptions=true
 Use=true
 VariantList=dvorak-alt-intl
