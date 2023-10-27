@@ -9,13 +9,13 @@
   url = https://github.com/jaor/xmobar
 [submodule "tmux/.tmux/plugins/tpm"]
 	path = tmux/.tmux/plugins/tpm
-	url = git@github.com:tmux-plugins/tpm
+	url = https://github.com:tmux-plugins/tpm
 [submodule "xmonad/.xmonad/xmonad-themes"]
   path = xmonad/.xmonad/xmonad-themes
   url = https://github.com/CyberGsus/xmonad-themes
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
-	url = git@github.com:cybergsus/neovim-setup
+	url = git@github.com:cg-jl/neovim-setup
 	branch = new-dots
 [submodule "zsh/.zsh/autocomplete"]
 	path = zsh/.zsh/autocomplete
