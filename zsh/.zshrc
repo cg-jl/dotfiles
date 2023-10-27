@@ -9,8 +9,9 @@ add-to-path() {
 }
 
 
+
 ldpath+=(/opt/lib /usr/lib)
-path=(/opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $path)
+path=(/opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/sw/install/llvm/bin $path)
 
 if command -v "direnv" >/dev/null 2>/dev/null; then
     eval "$(direnv hook zsh)"
@@ -26,11 +27,16 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export GIT_EDITOR=nvim
 alias gap='git add --patch'
 alias gst='git status'
+alias gs='git status'
 alias gpf='git push --force-with-lease'
+alias gcan='git commit --amend --no-edit'
+alias gc.='git commit'
 
 # ls alias
 alias ls='ls --color=auto'
-alias ll='ls -lA'
+alias ll='ls -lAh'
+
+alias v='nvim'
 
 pure-prompt() {
     fpath+=("$HOME/.zsh/pure")
@@ -57,8 +63,16 @@ load-nvm() {
 }
 
 # opam configuration
-if [[ -r /home/gsus/.opam/opam-init/init.zsh ]]; then source /home/gsus/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null; fi
+if [[ -r /home/cg/.opam/opam-init/init.zsh ]]; then source /home/cg/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null; fi
 
-if [ -f "/home/gsus/.ghcup/env" ]; then source "/home/gsus/.ghcup/env"; fi # ghcup-env
+# direnv
+eval "$(direnv hook zsh)"
 
-if [ -e /home/gsus/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gsus/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -f "/home/cg/.ghcup/env" ]; then source "/home/cg/.ghcup/env"; fi # ghcup-env
+
+# bun completions
+[ -s "/home/cg/.bun/_bun" ] && source "/home/cg/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
