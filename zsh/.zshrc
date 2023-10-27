@@ -76,3 +76,6 @@ eval "$(direnv hook zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# zoxide
+which  zoxide >/dev/null && eval "$(zoxide init zsh)"
