@@ -68,8 +68,6 @@ if [[ -r /home/cg/.opam/opam-init/init.zsh ]]; then source /home/cg/.opam/opam-i
 # direnv
 eval "$(direnv hook zsh)"
 
-if [ -f "/home/cg/.ghcup/env" ]; then source "/home/cg/.ghcup/env"; fi # ghcup-env
-
 # bun completions
 [ -s "/home/cg/.bun/_bun" ] && source "/home/cg/.bun/_bun"
 
