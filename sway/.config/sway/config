@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator #/home/gsus/.local/bin/wezterm
 set $term foot
 set $browser firefox
-set $screenshot /home/gsus/.local/bin/screenshot.sh
+set $screenshot /home/cg/.local/bin/screenshot.sh
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -25,7 +25,7 @@ set $menu wofi --conf NONE -no-lazy-grab --show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/gsus/.dotfiles/wallpapers/code-blue-purple.png fill
+output * bg $HOME/.dots/wallpapers/asturias.jpg fill
 #
 # Example configuration:
 #
