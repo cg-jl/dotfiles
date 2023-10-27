@@ -2,8 +2,8 @@
 {pkgs, config, cpu,  ...}: {
   fonts.fontconfig.enable = true;
   home.stateVersion = "23.05";
-  home.username = "gsus";
-  home.homeDirectory = "/home/gsus";
+  home.username = "cg";
+  home.homeDirectory = "/home/cg";
   home.file = {
     "zls-config" = {
       source = ../../../zls/.config/zls.json;
@@ -49,7 +49,6 @@
     go
     gopls
     nodejs
-
 
     man-pages
     binutils # addr2line

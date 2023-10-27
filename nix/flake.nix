@@ -16,7 +16,7 @@
   outputs = { nixpkgs, home-manager, ... }@inputs:
     {
 
-      homeConfigurations."gsus" =
+      homeConfigurations."cg" =
         let pkgs = nixpkgs.legacyPackages.x86_64-linux; in 
         home-manager.lib.homeManagerConfiguration ({
          modules = [
