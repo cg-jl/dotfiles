@@ -30,7 +30,9 @@ alias gst='git status'
 alias gs='git status'
 alias gpf='git push --force-with-lease'
 alias gcan='git commit --amend --no-edit'
+alias gca='git commit --amend'
 alias gc.='git commit'
+alias gra='git rebase -i'
 
 # ls alias
 alias ls='ls --color=auto'
