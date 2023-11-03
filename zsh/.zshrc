@@ -32,6 +32,8 @@ alias gpf='git push --force-with-lease'
 alias gcan='git commit --amend --no-edit'
 alias gca='git commit --amend'
 alias gc.='git commit'
+alias gr.='git restore'
+alias gud='git diff'
 alias gra='git rebase -i'
 
 # ls alias
