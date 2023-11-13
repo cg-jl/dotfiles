@@ -15,7 +15,7 @@ set $up k
 set $right l
 # Your preferred terminal emulator #/home/gsus/.local/bin/wezterm
 set $term foot
-set $browser firefox
+set $browser chromium
 set $screenshot /home/cg/.local/bin/screenshot.sh
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
