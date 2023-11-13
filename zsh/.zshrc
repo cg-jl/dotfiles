@@ -11,7 +11,11 @@ add-to-path() {
 
 
 ldpath+=(/opt/lib /usr/lib)
-path=(/opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/sw/install/llvm/bin $HOME/sw/install/neovim/bin $path)
+path=(/opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $path)
+
+for dir in llvm neovim crosstool-ng; do
+    path+="$HOME/sw/install/$dir/bin"
+done
 
 if command -v "direnv" >/dev/null 2>/dev/null; then
     eval "$(direnv hook zsh)"
