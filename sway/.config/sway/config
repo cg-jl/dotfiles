@@ -52,7 +52,6 @@ output * bg $HOME/.dots/wallpapers/asturias.jpg fill
 input type:keyboard {
     xkb_layout us
     xkb_variant dvorak-alt-intl
-    xkb_options "caps:backspace"
 }
 
 input type:touchpad {
