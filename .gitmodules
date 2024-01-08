@@ -45,3 +45,6 @@
 [submodule "zsh/.zsh/pure"]
 	path = zsh/.zsh/pure
 	url = https://github.com/sindresorhus/pure
+[submodule "vim/.vim/plugins/odin.vim"]
+	path = vim/.vim/plugins/odin.vim
+	url = https://github.com/Tetralux/odin.vim
