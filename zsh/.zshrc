@@ -10,8 +10,11 @@ add-to-path() {
 
 
 
-ldpath+=(/opt/lib /usr/lib)
-path=(/opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $path)
+ldpath+=(/opt/lib /opt/riscv/lib /usr/lib)
+path=(/opt/jdtls/bin /opt/riscv/bin /opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $path)
+
+
+export OPAMROOT="/run/media/cg/langs/.opam"
 
 for dir in llvm neovim crosstool-ng; do
     path+="$HOME/sw/install/$dir/bin"
@@ -71,7 +74,7 @@ load-nvm() {
 }
 
 # opam configuration
-if [[ -r /home/cg/.opam/opam-init/init.zsh ]]; then source /home/cg/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null; fi
+if [[ -r $OPAMROOT/opam-init/init.zsh ]]; then source $OPAMROOT/opam-init/init.zsh  > /dev/null 2> /dev/null; fi
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -85,3 +88,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # zoxide
 which  zoxide >/dev/null && eval "$(zoxide init zsh)"
+
+[ -f "/home/cg/.ghcup/env" ] && source "/home/cg/.ghcup/env" || true # ghcup-env
