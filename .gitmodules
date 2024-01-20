@@ -51,3 +51,9 @@
 [submodule "foot/themes/base16-foot"]
 	path = foot/themes/base16-foot
 	url = https://github.com/tinted-theming/base16-foot
+[submodule "vim/.vim/pack/vendor/start/base16-vim"]
+	path = vim/.vim/pack/vendor/start/base16-vim
+	url = https://github.com/chriskempson/base16-vim
+[submodule "vim/.vim/pack/vendor/start/odin.vim"]
+	path = vim/.vim/pack/vendor/start/odin.vim
+	url = https://github.com/Tetralux/odin.vim
