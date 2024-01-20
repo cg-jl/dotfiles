@@ -48,3 +48,6 @@
 [submodule "vim/.vim/plugins/odin.vim"]
 	path = vim/.vim/plugins/odin.vim
 	url = https://github.com/Tetralux/odin.vim
+[submodule "foot/themes/base16-foot"]
+	path = foot/themes/base16-foot
+	url = https://github.com/tinted-theming/base16-foot
