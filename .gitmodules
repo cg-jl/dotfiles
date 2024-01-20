@@ -1,18 +1,6 @@
-[submodule "xmonad/.xmonad/xmonad-git"]
-  path = xmonad/.xmonad/xmonad-git
-  url = https://github.com/xmonad/xmonad
-[submodule "xmonad/.xmonad/xmonad-contrib"]
-	path = xmonad/.xmonad/xmonad-contrib
-	url = https://github.com/xmonad/xmonad-contrib
-[submodule "xmonad/.xmonad/xmobar-git"]
-  path = xmonad/.xmonad/xmobar-git
-  url = https://github.com/jaor/xmobar
 [submodule "tmux/.tmux/plugins/tpm"]
 	path = tmux/.tmux/plugins/tpm
 	url = https://github.com:tmux-plugins/tpm
-[submodule "xmonad/.xmonad/xmonad-themes"]
-  path = xmonad/.xmonad/xmonad-themes
-  url = https://github.com/CyberGsus/xmonad-themes
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = git@github.com:cg-jl/neovim-setup
@@ -26,12 +14,6 @@
 [submodule "zsh/.zsh/syntax-highlighting"]
 	path = zsh/.zsh/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "xmonad/.xmonad/xmonad"]
-	path = xmonad/.xmonad/xmonad
-	url = https://github.com/xmonad/xmonad
-[submodule "xmonad/.xmonad/xmobar"]
-	path = xmonad/.xmonad/xmobar
-	url = https://github.com/jaor/xmobar
 [submodule "zsh/.zsh/zsh-syntax-highlighting"]
 	path = zsh/.zsh/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting
