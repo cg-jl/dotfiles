@@ -42,6 +42,7 @@ alias gc.='git commit'
 alias gr.='git restore'
 alias gud='git diff'
 alias gra='git rebase -i'
+alias cachegrind='valgrind --tool=callgrind'
 
 # ls alias
 alias ls='ls --color=auto'
