@@ -3,20 +3,97 @@
 
 # dotfiles
 
-This is *just* a backup for my current dotfiles. You can try them if you want,
-but I won't provide any shortcuts. Please make sure to read stuff like keybinds
-etc to make sure you're doing the correct thing.
+As their name suggest, these are the configuration files & submodules I keep for
+myself. I started this as a way to have an easy way to switch to new computers,
+but I haven't done anything substantial besides distrohopping a couple of times.
+I keep it though, not just because it *might* be useful in the future, but it
+also acts as both a snapshot of what I currently like and a history line of how
+my taste for work & colors has changed over time.
+
+After many resets, I decided to do minimal setup, so now my desktop just has a
+changed wallpaper, changed keyboard to us-dvp and `foot` as a terminal.
+
+Please note that this repository is designed to be write-only (and only by me).
+This README has instructions I've written in the past, partly because I wanted
+to have a record of them, partly because I enjoy doing these as a some kind of
+journal. There are things that may be out of date since I'm not using them (and
+haven't got to cleaning them up yet), but most things I've written are there
+because they've worked. If you really want to try them, do it, but I'm not sure
+that I could help you if you had an issue while installing.
 
 ## Screenshot
 
-I only have the "productive" screensot since I'm always doing something with the
-computer, so I haven't riced it to look good "without any extra window".
+I'm not including screenshots anymore since I haven't been consistent on
+updating.
 
-![busy screenshot](screenshots/work.png)
+If you're checking this from a place you can contact me from and want to see how things look, just ask me for one!
+
+## Module dependencies
+
+Here's a list of what these dotfiles configure and a list of interesting links
+
+- [`stow`](https://www.gnu.org/software/stow/): Read [Installing](#installing) and [Submodules].
+- Wayland only:
+    - [`sway`](https://swaywm.org/): See tips from the [i3 Migration Guide](https://github.com/swaywm/sway/wiki/i3-Migration-Guide)
+        - Check the config to change the background! It doesn't use feh!
+    - [`wofi`](https://hg.sr.ht/~scoopta/wofi): [sway config](sway/.config/sway)
+    - [`foot`](https://codeberg.org/dnkl/foot): [config](foot/.config/foot), [themes](foot/themes) [Submodules]
+- `tmux`: [config](./tmux) [Submodules]
+    - I'm using [`t-smart-tmux-session-manager`](https://github.com/joshmedeski/t-smart-tmux-session-manager), which provides bindings for `zoxide`!
+- `bat`: [config](bat/.config/bat). Needs the `bat/.config/catppuccin` submodule. [Submodules]
+- `zsh`: [config](./zsh) [Submodules]
+    - The config searches for `zoxide`, which I don't use much in the command
+      line, but more through tmux. I'm discovering things like `zi` which runs a
+      fuzzy finder too.
+
+- `neovim` 0.9.5: [config](./nvim/.config/nvim) [Submodules]
+
+
+
+## Installing
+
+The way to install is using git and [stow]:
+
+```sh
+git clone git@github.com:cg-jl/dotfiles ~/.cybergsus-dots
+```
+
+To e.g symlink alacritty config:
+
+```sh
+cd ~/.cybergsus-dots
+stow alacritty
+```
+
+
+### Submodules
+
+Some configurations require submodules to load correctly (i.e nvim config is in
+a separate repository, zsh autosuggestions/highlighting, tmux modules etc).
+
+Before loading a config, make sure you have the submodules that correspond to
+that section loaded. Let's say for example you want to load the zsh stuff:
+
+```sh
+cd ~/.cybergsus-dots
+git submodule update --init zsh
+# some git output later...
+stow zsh
+```
+
+All modules that may need a submodule init have a link to this section.
 
 ## Using Nix
 
-I'm starting to use `nix` and `home-manager` ta configure my system.
+I've tried using `nix` and `home-manager` to configure my system. It's been a
+pretty cool experience overall.
+
+I've failed and fell back to using void linux, mostly because my hobby involves
+switching between compiler toolchains a lot, which aren't usually available as
+packages (understandably so). I might try the new `docker compose` commands for
+that and later return to Nix, since it's pretty handy to always know what you're
+using on your system. I'll keep these instructions though:
+
 There's still a couple of parts that I haven't put into VCS, so they're
 documented here:
 
@@ -67,67 +144,3 @@ in
 - You should be good to go!
 
 
-## Module dependencies
-
-Here's a list of what these dotfiles configure and a list of interesting links
-
-- [`stow`](https://www.gnu.org/software/stow/): Read [Installing](#installing) and [Submodules].
-- Wayland only:
-    - [`sway`](https://swaywm.org/): See tips from the [i3 Migration Guide](https://github.com/swaywm/sway/wiki/i3-Migration-Guide)
-        - Check the config to change the background! It doesn't use feh!
-    - [`wofi`](https://hg.sr.ht/~scoopta/wofi): [sway config](sway/.config/sway)
-- Xorg only:
-    - `i3-gaps` (Xorg only): [github](https://github.com/Airblader/i3). [config](./i3/.i3/config)
-    - `picom` (Xorg only) [picom config](./picom/.config/picom)
-    - `feh` (): See [rc](./rc) and [wallpapers](./wallpapers). **IMPORTANT**: Make sure [fehbg](./rc/.fehbg) points
-      to the correct location for the wallpaper.
-    - `rofi`: [config](rofi/.config/rofi). Bound in [i3 config](./i3/.i3/config).
-- `firefox`: Bound in [i3 config].
-- `alacritty`: [config](./alacritty/.config/alacritty/alacritty.yml)
-- `kitty`: [config](./kitty/.config/kitty/kitty.conf) [Submodules]
-- `wezterm`: [config](./wezterm/.config/wezterm/wezterm.lua)
-- `tmux`: [config](./tmux) [Submodules]
-- `bat`: [config](bat/.config/bat). Needs the `bat/.config/catppuccin` submodule. [Submodules]
-- `zsh`: [config](./zsh) [Submodules]
-    - [`lsd`](https://github.com/Peltoche/lsd) is set through aliases
-    - prompt requires starship.
-- [`starship`](https://starship.rs/) prompt:
-  [config](starship/.config/starship.toml)
-- `neovim` 0.8 stable: [config](./nvim/.config/nvim) [Submodules]
-
-
-## Installing
-
-The way to install is using git and [stow]:
-
-```sh
-git clone git@github.com:cybergsus/dotfiles ~/.cybergsus-dots
-```
-
-To e.g symlink alacritty config:
-
-```sh
-cd ~/.cybergsus-dots
-stow alacritty
-```
-
-
-### Submodules
-
-Some configurations require submodules to load correctly (i.e nvim config is in
-a separate repository, zsh autosuggestions/highlighting, tmux modules etc).
-
-Before loading a config, make sure you have the submodules that correspond to
-that section loaded. Let's say for example you want to load the zsh stuff:
-
-```sh
-cd ~/.cybergsus-dots
-git submodule update --init zsh
-# some git output later...
-stow zsh
-```
-
-All modules that may need a submodule init have a link to this section.
-
-
-<!-- TODO: add nushell? -->
