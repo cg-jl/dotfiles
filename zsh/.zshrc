@@ -16,10 +16,6 @@ path=(/opt/jdtls/bin /opt/riscv/bin /opt/bin $HOME/.cargo/bin $HOME/go/bin $HOME
 
 export OPAMROOT="/run/media/cg/langs/.opam"
 
-for dir in llvm neovim crosstool-ng; do
-    path+="$HOME/sw/install/$dir/bin"
-done
-
 if command -v "direnv" >/dev/null 2>/dev/null; then
     eval "$(direnv hook zsh)"
 fi
@@ -62,17 +58,6 @@ pure-prompt
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
-# starship prompt
-starship-prompt() {
-    source <(starship init zsh --print-full-init)
-}
-
-
-load-nvm() {
-    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm if [ -s "$NVM_DIR"]
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-}
 
 # opam configuration
 if [[ -r $OPAMROOT/opam-init/init.zsh ]]; then source $OPAMROOT/opam-init/init.zsh  > /dev/null 2> /dev/null; fi
@@ -80,14 +65,5 @@ if [[ -r $OPAMROOT/opam-init/init.zsh ]]; then source $OPAMROOT/opam-init/init.z
 # direnv
 eval "$(direnv hook zsh)"
 
-# bun completions
-[ -s "/home/cg/.bun/_bun" ] && source "/home/cg/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # zoxide
 which  zoxide >/dev/null && eval "$(zoxide init zsh)"
-
-[ -f "/home/cg/.ghcup/env" ] && source "/home/cg/.ghcup/env" || true # ghcup-env
