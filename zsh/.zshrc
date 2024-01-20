@@ -67,3 +67,6 @@ eval "$(direnv hook zsh)"
 
 # zoxide
 which  zoxide >/dev/null && eval "$(zoxide init zsh)"
+
+# Lately I'm editing commands a lot. Consider...?
+# https://github.com/jeffreytse/zsh-vi-mode
